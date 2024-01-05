@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
   <link rel="icon" type="image/png" href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
 <title>
-    Argon Dashboard 2 by Creative Tim
+    Login
 </title>
 <!-- Fonts and icons -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
