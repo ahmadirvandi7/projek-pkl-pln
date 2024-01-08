@@ -51,7 +51,7 @@ class Home extends BaseController
         return view('jadwalrapat_superadmin');
     }
 
-    public function datadriver_superadmin(): string
+    public function datadriver_superadmin(): string 
     {
         return view('datadriver_superadmin');
     }
