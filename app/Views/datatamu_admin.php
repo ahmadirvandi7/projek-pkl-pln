@@ -280,7 +280,7 @@
                         </div>
                       </div>
                       <div class="ms-auto w-20 d-flex align-items-end justify-content-end">
-                        <img class="w-60 mt-2" src="../assets/img/logos/mastercard.png" alt="logo">
+                        <img class="w-60 mt-2" src="/material_dashboard/assets/img/logos/mastercard.png" alt="logo">
                       </div>
                     </div>
                   </div>
@@ -337,14 +337,14 @@
                   <div class="row">
                     <div class="col-md-6 mb-md-0 mb-4">
                       <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
-                        <img class="w-10 me-3 mb-0" src="../assets/img/logos/mastercard.png" alt="logo">
+                        <img class="w-10 me-3 mb-0" src="/material_dashboard/assets/img/logos/mastercard.png" alt="logo">
                         <h6 class="mb-0">****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;7852</h6>
                         <i class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card"></i>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
-                        <img class="w-10 me-3 mb-0" src="../assets/img/logos/visa.png" alt="logo">
+                        <img class="w-10 me-3 mb-0" src="/material_dashboard/assets/img/logos/visa.png" alt="logo">
                         <h6 class="mb-0">****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;5248</h6>
                         <i class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card"></i>
                       </div>
@@ -576,13 +576,12 @@
                 © <script>
                   document.write(new Date().getFullYear())
                 </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                for a better web.
+                <i class="fa fa-heart"></i>
+                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">PT. PLN (Persero) Unit Induk Distribusi Lampung</a>
               </div>
             </div>
             <div class="col-lg-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+              <!-- <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                 <li class="nav-item">
                   <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
                 </li>
@@ -595,7 +594,7 @@
                 <li class="nav-item">
                   <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
                 </li>
-              </ul>
+              </ul> -->
             </div>
           </div>
         </div>
@@ -680,6 +679,7 @@
 <script src="<?php echo base_url('material_dashboard/assets/js/plugins/perfect-scrollbar.min.js'); ?>"></script>
 <script src="<?php echo base_url('material_dashboard/assets/js/plugins/smooth-scrollbar.min.js'); ?>"></script>
 <script src="<?php echo base_url('material_dashboard/assets/js/plugins/chartjs.min.js'); ?>"></script>
+<script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
       var options = {
@@ -691,7 +691,7 @@
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+  <script src="/material_dashboard/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
 </body>
 
 </html>

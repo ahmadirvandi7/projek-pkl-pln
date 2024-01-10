@@ -683,13 +683,12 @@
                 © <script>
                   document.write(new Date().getFullYear())
                 </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                for a better web.
+                <i class="fa fa-heart"></i>
+                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">PT. PLN (Persero) Unit Induk Distribusi Lampung</a>
               </div>
             </div>
             <div class="col-lg-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+              <!-- <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                 <li class="nav-item">
                   <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
                 </li>
@@ -702,7 +701,7 @@
                 <li class="nav-item">
                   <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
                 </li>
-              </ul>
+              </ul> -->
             </div>
           </div>
         </div>
@@ -787,6 +786,8 @@
 <script src="<?php echo base_url('material_dashboard/assets/js/plugins/perfect-scrollbar.min.js'); ?>"></script>
 <script src="<?php echo base_url('material_dashboard/assets/js/plugins/smooth-scrollbar.min.js'); ?>"></script>
 <script src="<?php echo base_url('material_dashboard/assets/js/plugins/chartjs.min.js'); ?>"></script>
+
+<script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
       var options = {
