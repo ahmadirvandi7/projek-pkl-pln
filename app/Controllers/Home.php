@@ -40,6 +40,15 @@ class Home extends BaseController
         return view('datatamu_admin');
     }
 
+    public function formtambahdatatamu_admin(): string
+    {
+        return view('formtambahtamu_admin');
+    }
+
+
+
+
+
     //superadmin
     public function beranda_superadmin(): string
     {
