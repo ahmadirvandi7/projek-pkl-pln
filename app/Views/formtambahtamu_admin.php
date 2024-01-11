@@ -149,7 +149,7 @@
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
             <li class="breadcrumb-item text-sm text-white active" aria-current="page">Admin</li>
           </ol>
-          <h6 class="font-weight-bolder text-white mb-0">Data Tamu</h6>
+          <h6 class="font-weight-bolder text-white mb-0">Form data tamu</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -179,7 +179,10 @@
                 <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
               </a>
             </li>
-            
+            <li class="nav-item dropdown pe-2 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <!-- <i class="fa fa-bell cursor-pointer"></i> -->
+            </li>
           </ul>
         </div>
       </div>
@@ -200,58 +203,53 @@
                 <div class="card-header pb-0 p-3">
                   <div class="row">
                     <div class="col-6 d-flex align-items-center">
-                      <!-- <h6 class="mb-0">Form Tambah Data Tamu</h6> -->
-                      <a class="btn btn-primary btn-sm mb-0 w-150" href="/formtambahdatatamu_admin" type="button">Tambah Data</a>
+                      <h6 class="mb-0">Form Tambah Data Tamu</h6>
                     </div>
-                    <!-- <div class="col-6 text-end">
-                      <a class="btn bg-gradient-dark mb-0" href="javascript:;"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add New Card</a>
-                    </div> -->
                   </div>
                 </div>
                 <div class="card-body p-3">
-                  <!-- <div class="row">
-                    <div class="col-md-6 mb-md-0 mb-4">
-                      <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
-                        <img class="w-10 me-3 mb-0" src="/material_dashboard/assets/img/logos/mastercard.png" alt="logo">
-                        <h6 class="mb-0">****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;7852</h6>
-                        <i class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card"></i>
-                      </div>
+                <form>
+                    <div class="form-group">
+                        <label for="example-text-input" class="form-control-label">Nama</label>
+                        <input class="form-control" type="text" placeholder="Masukkan nama disini ..." id="example-text-input">
                     </div>
-                    <div class="col-md-6">
-                      <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
-                        <img class="w-10 me-3 mb-0" src="/material_dashboard/assets/img/logos/visa.png" alt="logo">
-                        <h6 class="mb-0">****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;5248</h6>
-                        <i class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card"></i>
-                      </div>
+                    <div class="form-group">
+                        <label for="example-search-input" class="form-control-label">Asal Instansi</label>
+                        <input class="form-control" type="search" placeholder="Masukkan asal instansi disini ..." id="example-search-input">
                     </div>
-                  </div> -->
+                    <div class="form-group">
+                        <label for="example-tel-input" class="form-control-label">No. Telp</label>
+                        <input class="form-control" type="tel" placeholder="Masukkan nomor telepon disini ..." id="example-tel-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="example-datetime-input" class="form-control-label">Tanggal dan Waktu</label>
+                        <input class="form-control" type="datetime-local" placeholder="" id="example-datetime-input" onclick="setDateTimeNow()">
+                    </div>
+                </form>
+
+                <script>
+                    function setDateTimeNow() {
+                        var currentDate = new Date();
+                        var year = currentDate.getFullYear();
+                        var month = String(currentDate.getMonth() + 1).padStart(2, '0');
+                        var day = String(currentDate.getDate()).padStart(2, '0');
+                        var hours = String(currentDate.getHours()).padStart(2, '0');
+                        var minutes = String(currentDate.getMinutes()).padStart(2, '0');
+                        
+                        var dateTimeString = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
+
+                        document.getElementById('example-datetime-input').value = dateTimeString;
+                    }
+                </script>
+                    <a class="btn btn-primary btn-sm mb-0 w-150" href="/create" type="button">simpan</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-4">
-          <!--  -->
-        </div>
+        
       </div>
-      <div class="row">
-        <div class="col-md-7 mt-4">
-          <div class="card">
-            <div class="card-header pb-0 px-3">
-              <h6 class="mb-0">apa aja</h6>
-            </div>
-            <div class="card-body pt-4 p-3">
-              <ul class="list-group">
-                <!--  -->
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-5 mt-4">
-          <!--  -->
-          
-        </div>
-      </div>
+      
       <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
@@ -261,24 +259,10 @@
                   document.write(new Date().getFullYear())
                 </script>,
                 <i class="fa fa-heart"></i>
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">PT. PLN (Persero) Unit Induk Distribusi Lampung</a>
+                <a class="font-weight-bold" target="">PT. PLN (Persero) Unit Induk Distribusi Lampung</a>
               </div>
             </div>
             <div class="col-lg-6">
-              <!-- <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                </li>
-              </ul> -->
             </div>
           </div>
         </div>
@@ -372,6 +356,7 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
+
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
