@@ -146,7 +146,7 @@
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="">Pages</a></li>
             <li class="breadcrumb-item text-sm text-white active" aria-current="page">Admin</li>
           </ol>
           <h6 class="font-weight-bolder text-white mb-0">Form data tamu</h6>
@@ -160,13 +160,13 @@
           </div>
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
+              <a href="" class="nav-link text-white font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
                 <span class="d-sm-inline d-none">Sign In</span>
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
+              <a href="" class="nav-link text-white p-0" id="iconNavbarSidenav">
                 <div class="sidenav-toggler-inner">
                   <i class="sidenav-toggler-line bg-white"></i>
                   <i class="sidenav-toggler-line bg-white"></i>
@@ -175,12 +175,12 @@
               </a>
             </li>
             <li class="nav-item px-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0">
+              <a href="" class="nav-link text-white p-0">
                 <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
               </a>
             </li>
             <li class="nav-item dropdown pe-2 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              <a href="" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 <!-- <i class="fa fa-bell cursor-pointer"></i> -->
             </li>
           </ul>
@@ -189,7 +189,7 @@
     </nav>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
-      <div class="row">
+    <div class="row">
         <div class="col-lg-8">
           <div class="row">
             <div class="col-xl-6 mb-xl-0 mb-4">
@@ -200,55 +200,42 @@
             <!--  -->
             <div class="col-md-12 mb-lg-0 mb-4">
               <div class="card mt-4">
-                <div class="card-header pb-0 p-3">
-                  <div class="row">
-                    <div class="col-6 d-flex align-items-center">
-                      <h6 class="mb-0">Form Tambah Data Tamu</h6>
-                    </div>
+                  <div class="card-header pb-0 p-3">
+                      <div class="row">
+                          <div class="col-6 d-flex align-items-center">
+                              <h6 class="mb-0">Form Tambah Data Tamu</h6>
+                          </div>
+                      </div>
                   </div>
-                </div>
-                <div class="card-body p-3">
-                <form>
-                    <div class="form-group">
-                        <label for="example-text-input" class="form-control-label">Nama</label>
-                        <input class="form-control" type="text" placeholder="Masukkan nama disini ..." id="example-text-input">
-                    </div>
-                    <div class="form-group">
-                        <label for="example-search-input" class="form-control-label">Asal Instansi</label>
-                        <input class="form-control" type="search" placeholder="Masukkan asal instansi disini ..." id="example-search-input">
-                    </div>
-                    <div class="form-group">
-                        <label for="example-tel-input" class="form-control-label">No. Telp</label>
-                        <input class="form-control" type="tel" placeholder="Masukkan nomor telepon disini ..." id="example-tel-input">
-                    </div>
-                    <div class="form-group">
-                        <label for="example-datetime-input" class="form-control-label">Tanggal dan Waktu</label>
-                        <input class="form-control" type="datetime-local" placeholder="" id="example-datetime-input" onclick="setDateTimeNow()">
-                    </div>
-                </form>
-
-                <script>
-                    function setDateTimeNow() {
-                        var currentDate = new Date();
-                        var year = currentDate.getFullYear();
-                        var month = String(currentDate.getMonth() + 1).padStart(2, '0');
-                        var day = String(currentDate.getDate()).padStart(2, '0');
-                        var hours = String(currentDate.getHours()).padStart(2, '0');
-                        var minutes = String(currentDate.getMinutes()).padStart(2, '0');
-                        
-                        var dateTimeString = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
-
-                        document.getElementById('example-datetime-input').value = dateTimeString;
-                    }
-                </script>
-                    <a class="btn btn-primary btn-sm mb-0 w-150" href="/create" type="button">simpan</a>
-                </div>
+                  <div class="card-body p-3">
+                      <form action="<?= site_url('/datatamu_admin/store') ?>" method="post">
+                          <div class="form-group">
+                              <label for="nama_tamu" class="form-control-label">Nama</label>
+                              <input class="form-control" type="text" placeholder="Masukkan nama disini ..." name="nama_tamu" id="nama_tamu" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="asal_instansi" class="form-control-label">Asal Instansi</label>
+                              <input class="form-control" type="search" placeholder="Masukkan asal instansi disini ..." name="asal_instansi" id="asal_instansi" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="no_telepon" class="form-control-label">No. Telp</label>
+                              <input class="form-control" type="tel" placeholder="Masukkan nomor telepon disini ..." name="no_telepon" id="no_telepon" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="tanggal_waktu" class="form-control-label">Tanggal dan Waktu</label>
+                              <input class="form-control" type="datetime-local" placeholder="" name="tanggal_waktu" id="tanggal_waktu" onclick="setDateTimeNow()" required>
+                          </div>
+                          <button class="btn btn-primary btn-sm mb-0 w-150" type="submit">Simpan</button>
+                      </form>
+                  </div>
               </div>
-            </div>
+          </div>
+
           </div>
         </div>
         
       </div>
+
       
       <footer class="footer pt-3  ">
         <div class="container-fluid">
@@ -356,6 +343,21 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
+
+  <script>
+                              function setDateTimeNow() {
+                                  var currentDate = new Date();
+                                  var year = currentDate.getFullYear();
+                                  var month = String(currentDate.getMonth() + 1).padStart(2, '0');
+                                  var day = String(currentDate.getDate()).padStart(2, '0');
+                                  var hours = String(currentDate.getHours()).padStart(2, '0');
+                                  var minutes = String(currentDate.getMinutes()).padStart(2, '0');
+                                  
+                                  var dateTimeString = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
+
+                                  document.getElementById('tanggal_waktu').value = dateTimeString;
+                              }
+                          </script>
 
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>

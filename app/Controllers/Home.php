@@ -35,15 +35,15 @@ class Home extends BaseController
         return view('datadriver_admin');
     }
 
-    public function datatamu_admin(): string
-    {
-        return view('datatamu_admin');
-    }
+    // public function datatamu_admin(): string
+    // {
+    //     return view('datatamu_admin');
+    // }
 
-    public function formtambahdatatamu_admin(): string
-    {
-        return view('formtambahtamu_admin');
-    }
+    // public function formtambahdatatamu_admin(): string
+    // {
+    //     return view('formtambahtamu_admin');
+    // }
 
 
 
