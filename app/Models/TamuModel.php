@@ -15,7 +15,7 @@ class TamuModel extends Model
     protected $allowedFields    = ['nama_tamu', 'tanggal_waktu', 'asal_instansi', 'no_telepon'];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
@@ -37,4 +37,29 @@ class TamuModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getTamu()
+    {
+        return $this->findAll();
+    }
+
+    public function saveTamu($data)
+    {
+        $this->insert($data);
+    }
+
+    public function findTamu($id)
+    {
+        return $this->find($id);
+    }
+
+    public function updateTamu($id, $data)
+    {
+        $this->update($id, $data);
+    }
+
+    public function deleteTamu($id)
+    {
+        $this->delete($id);
+    }
 }

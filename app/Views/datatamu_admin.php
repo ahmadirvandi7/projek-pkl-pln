@@ -201,7 +201,7 @@
                   <div class="row">
                     <div class="col-6 d-flex align-items-center">
                       <!-- <h6 class="mb-0">Form Tambah Data Tamu</h6> -->
-                      <a class="btn btn-primary btn-sm mb-0 w-150" href="/formtambahdatatamu_admin" type="button">Tambah Data</a>
+                      <a class="btn btn-primary btn-sm mb-0 w-150" href="/datatamu_admin/create" type="button">Tambah Data</a>
                     </div>
                     <!-- <div class="col-6 text-end">
                       <a class="btn bg-gradient-dark mb-0" href="javascript:;"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add New Card</a>

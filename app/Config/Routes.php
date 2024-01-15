@@ -15,8 +15,17 @@ $routes->get('/register', 'Home::register');
 $routes->get('/beranda_admin', 'Home::beranda_admin');
 $routes->get('/jadwalrapat_admin', 'Home::jadwalrapat_admin');
 $routes->get('/datadriver_admin', 'Home::datadriver_admin');
-$routes->get('/datatamu_admin', 'Home::datatamu_admin');
-$routes->get('/formtambahdatatamu_admin', 'Home::formtambahdatatamu_admin');
+
+// $routes->get('/datatamu_admin', 'Home::datatamu_admin');
+
+$routes->get('/datatamu_admin', 'DatatamuController::index');
+$routes->get('/datatamu_admin/create', 'DatatamuController::create');
+$routes->post('/datatamu_admin/store', 'DatatamuController::store');
+$routes->get('/datatamu_admin/edit/(:num)', 'DatatamuController::edit/$1');
+$routes->post('/datatamu_admin/update/(:num)', 'DatatamuController::update/$1');
+$routes->delete('datatamu_admin/delete/(:num)', 'DatatamuController::delete/$1');
+
+
 
 
 //superadmin
