@@ -185,73 +185,89 @@
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="container-fluid py-4">
+    <!-- <div class="container-fluid py-4">
       <div class="row">
         <div class="col-lg-8">
           <div class="row">
             <div class="col-xl-6 mb-xl-0 mb-4">
-              <div class="card bg-transparent shadow-xl">
+              <div class="card bg-transparent shadow-xl"> -->
                 
               </div>
             </div>
             <!--  -->
-            <div class="col-md-12 mb-lg-0 mb-4">
-              <div class="card mt-4">
-                <div class="card-header pb-0 p-3">
-                  <div class="row">
-                    <div class="col-6 d-flex align-items-center">
-                      <!-- <h6 class="mb-0">Form Tambah Data Tamu</h6> -->
-                      <a class="btn btn-primary btn-sm mb-0 w-150" href="/datatamu_admin/create" type="button">Tambah Data</a>
-                    </div>
-                    <!-- <div class="col-6 text-end">
-                      <a class="btn bg-gradient-dark mb-0" href="javascript:;"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add New Card</a>
-                    </div> -->
+            <div class="container-fluid py-4">
+            <div class="row">
+              <div class="col-md-12 mb-lg-0 mb-4">
+                  <div class="card mt-4">
+                      <div class="card-header pb-0 p-3">
+                          <div class="row">
+                              <div class="col-8 d-flex align-items-center">
+                                  <a class="btn btn-primary btn-sm mb-0 w-150" href="/datatamu_admin/create" type="button">Tambah Data</a>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card-body p-3">
+                          <table class="table">
+                              <thead>
+                                  <tr>
+                                      <th>No.</th>
+                                      <th>Nama Tamu</th>
+                                      <th>Asal Instansi</th>
+                                      <th>No. Telepon</th>
+                                      <th>Tanggal dan Waktu</th>
+                                      <th>Aksi</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <?php $nomor = 1; ?>
+                                  <?php foreach ($tamu as $tamu) : ?>
+                                      <tr>
+                                          <td><?= $nomor++; ?></td>
+                                          <td><?= $tamu['nama_tamu']; ?></td>
+                                          <td><?= $tamu['asal_instansi']; ?></td>
+                                          <td><?= $tamu['no_telepon']; ?></td>
+                                          <td><?= $tamu['tanggal_waktu']; ?></td>
+                                          <!-- Tambah kolom lain sesuai kebutuhan -->
+                                          <td>
+                                              <a class="btn btn-link text-dark px-3 mb-0" href="/datatamu_admin/edit/<?= $tamu['id']; ?>">
+                                                  <i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit
+                                              </a>
+                                              <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="/datatamu_admin/delete/<?= $tamu['id']; ?>">
+                                                  <i class="far fa-trash-alt me-2"></i>Hapus
+                                              </a>
+                                          </td>
+
+                                      </tr>
+                                  <?php endforeach; ?>
+                              </tbody>
+                          </table>
+                      </div>
                   </div>
-                </div>
-                <div class="card-body p-3">
-                  <!-- <div class="row">
-                    <div class="col-md-6 mb-md-0 mb-4">
-                      <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
-                        <img class="w-10 me-3 mb-0" src="/material_dashboard/assets/img/logos/mastercard.png" alt="logo">
-                        <h6 class="mb-0">****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;7852</h6>
-                        <i class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card"></i>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
-                        <img class="w-10 me-3 mb-0" src="/material_dashboard/assets/img/logos/visa.png" alt="logo">
-                        <h6 class="mb-0">****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;5248</h6>
-                        <i class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card"></i>
-                      </div>
-                    </div>
-                  </div> -->
-                </div>
               </div>
-            </div>
+          </div>
+
+          </div>
+
           </div>
         </div>
         <div class="col-lg-4">
           <!--  -->
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-7 mt-4">
           <div class="card">
-            <div class="card-header pb-0 px-3">
-              <h6 class="mb-0">apa aja</h6>
-            </div>
+            
             <div class="card-body pt-4 p-3">
               <ul class="list-group">
-                <!--  -->
               </ul>
             </div>
           </div>
         </div>
         <div class="col-md-5 mt-4">
-          <!--  -->
           
         </div>
-      </div>
+      </div> -->
       <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
