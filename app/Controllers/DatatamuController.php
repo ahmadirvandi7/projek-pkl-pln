@@ -33,9 +33,10 @@ class DatatamuController extends BaseController
     {
         $data = [
             'nama_tamu' => $this->request->getPost('nama_tamu'),
+            'tanggal_waktu' => $this->request->getPost('tanggal_waktu'),
             'asal_instansi' => $this->request->getPost('asal_instansi'),
             'no_telepon' => $this->request->getPost('no_telepon'),
-            'tanggal_waktu' => $this->request->getPost('tanggal_waktu'),
+            
         ];
 
         $this->tamuModel->saveTamu($data);
@@ -55,8 +56,9 @@ class DatatamuController extends BaseController
         $data = [
             'nama_tamu' => $this->request->getPost('nama_tamu'),
             'tanggal_waktu' => $this->request->getPost('tanggal_waktu'),
-            'asal_instansi' => $this->request->getPost('asal instansi'),
+            'asal_instansi' => $this->request->getPost('asal_instansi'),
             'no_telepon' => $this->request->getPost('no_telepon'),
+            
         ];
 
         $this->tamuModel->updateTamu($id, $data);
@@ -66,7 +68,7 @@ class DatatamuController extends BaseController
 
     public function delete($id)
     {
-        $this->tamuModel->deleteTosen($id);
+        $this->tamuModel->deletTamu($id);
 
         return redirect()->to('/datatamu_admin');
     }

@@ -215,7 +215,7 @@
                           </div>
                           <div class="form-group">
                               <label for="asal_instansi" class="form-control-label">Asal Instansi</label>
-                              <input class="form-control" type="search" placeholder="Masukkan asal instansi disini ..." name="asal_instansi" id="asal_instansi" required>
+                              <input class="form-control" type="text" placeholder="Masukkan asal instansi disini ..." name="asal_instansi" id="asal_instansi" required>
                           </div>
                           <div class="form-group">
                               <label for="no_telepon" class="form-control-label">No. Telp</label>
@@ -229,8 +229,7 @@
                       </form>
                   </div>
               </div>
-          </div>
-
+            </div>
           </div>
         </div>
         
