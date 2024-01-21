@@ -7,7 +7,6 @@ use App\Models\TamuModel;
 
 class DatatamuController extends BaseController
 {
-
     protected $tamuModel;
     protected $helpers = ['form'];
 
@@ -16,7 +15,6 @@ class DatatamuController extends BaseController
         $this->tamuModel = new TamuModel();
     }
 
-    
     public function index()
     {
         $data['tamu'] = $this->tamuModel->getTamu();
@@ -28,22 +26,23 @@ class DatatamuController extends BaseController
         return view('/formtambahtamu_admin');
     }
 
-
     public function store()
     {
-        $data = [
-            'nama_tamu' => $this->request->getPost('nama_tamu'),
-            'tanggal_waktu' => $this->request->getPost('tanggal_waktu'),
-            'asal_instansi' => $this->request->getPost('asal_instansi'),
-            'no_telepon' => $this->request->getPost('no_telepon'),
-            
-        ];
+        try {
+            $data = [
+                'nama_tamu' => $this->request->getPost('nama_tamu'),
+                'tanggal_waktu' => $this->request->getPost('tanggal_waktu'),
+                'asal_instansi' => $this->request->getPost('asal_instansi'),
+                'no_telepon' => $this->request->getPost('no_telepon'),
+            ];
 
-        $this->tamuModel->saveTamu($data);
+            $this->tamuModel->saveTamu($data);
 
-        return redirect()->to('/datatamu_admin');
+            return redirect()->to(base_url('/datatamu_admin'));
+        } catch (\Throwable $th) {
+            return redirect()->to(base_url('/'));
+        }
     }
-
 
     public function edit($id)
     {
@@ -58,18 +57,17 @@ class DatatamuController extends BaseController
             'tanggal_waktu' => $this->request->getPost('tanggal_waktu'),
             'asal_instansi' => $this->request->getPost('asal_instansi'),
             'no_telepon' => $this->request->getPost('no_telepon'),
-            
         ];
 
         $this->tamuModel->updateTamu($id, $data);
 
-        return redirect()->to('/datatamu_admin');
+        return redirect()->to(base_url('/datatamu_admin'));
     }
 
     public function delete($id)
     {
-        $this->tamuModel->deletTamu($id);
+        $this->tamuModel->deleteTamu($id);
 
-        return redirect()->to('/datatamu_admin');
+        return redirect()->to(base_url('/datatamu_admin'));
     }
 }

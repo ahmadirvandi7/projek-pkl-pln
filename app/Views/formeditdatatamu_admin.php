@@ -203,13 +203,6 @@
         </div>
       </div>
     </nav>
-    <!-- End Navbar -->
-    <!-- <div class="container-fluid py-4">
-      <div class="row">
-        <div class="col-lg-8">
-          <div class="row">
-            <div class="col-xl-6 mb-xl-0 mb-4">
-              <div class="card bg-transparent shadow-xl"> -->
 
     </div>
     </div>
@@ -219,39 +212,42 @@
         <div class="col-md-12 mb-lg-0 mb-4">
           <div class="card mt-4">
             <div class="card-body p-3">
-              <p class="text-uppercase text-sm">form tambah data tamu</p>
-              <form action="<?= site_url('/datatamu_admin/store') ?>" method="post">
+              <p class="text-uppercase text-sm">Form Edit Data Tamu</p>
+              <form action="<?= site_url('/datatamu_admin/update/' . $tamu['id']) ?>" method="post">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="nama_tamu" class="form-control-label">Nama</label>
                     <input class="form-control" id="nama_tamu" type="text" placeholder="Masukkan nama disini ..."
-                      name="nama_tamu" required>
+                      name="nama_tamu" value="<?= $tamu['nama_tamu'] ?>" required>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                  <label for="asal_instansi" class="form-control-label">Asal Instansi</label>
+                    <label for="asal_instansi" class="form-control-label">Asal Instansi</label>
                     <input class="form-control" id="asal_instansi" type="text"
-                      placeholder="Masukkan asal instansi disini ..." name="asal_instansi" required>
+                      placeholder="Masukkan asal instansi disini ..." name="asal_instansi"
+                      value="<?= $tamu['asal_instansi'] ?>" required>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="no_telepon" class="form-control-label">No. Telp</label>
                     <input class="form-control" id="no_telepon" type="tel"
-                      placeholder="Masukkan nomor telepon disini ..." name="no_telepon" required>
+                      placeholder="Masukkan nomor telepon disini ..." name="no_telepon"
+                      value="<?= $tamu['no_telepon'] ?>" required>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="tanggal_waktu" class="form-control-label">Tanggal dan Waktu</label>
                     <input class="form-control" id="tanggal_waktu" type="datetime-local" placeholder=""
-                      name="tanggal_waktu" onclick="setDateTimeNow()" required>
+                      name="tanggal_waktu" value="<?= $tamu['tanggal_waktu'] ?>" >
                   </div>
                 </div>
                 <button class="btn btn-primary btn-sm mb-0 w-150" type="submit">Submit</button>
               </form>
             </div>
+
           </div>
         </div>
       </div>
@@ -264,20 +260,7 @@
       <!--  -->
     </div>
     </div>
-    <!-- <div class="row">
-        <div class="col-md-7 mt-4">
-          <div class="card">
-            
-            <div class="card-body pt-4 p-3">
-              <ul class="list-group">
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-5 mt-4">
-          
-        </div>
-      </div> -->
+
     <footer class="footer pt-3  ">
       <div class="container-fluid">
         <div class="row align-items-center justify-content-lg-between">
@@ -409,7 +392,7 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
-  <script>
+  <!-- <script>
     function setDateTimeNow() {
       var currentDate = new Date();
       var year = currentDate.getFullYear();
@@ -423,7 +406,7 @@
       document.getElementById('tanggal_waktu').value = dateTimeString;
     }
     setDateTimeNow();
-  </script>
+  </script> -->
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
