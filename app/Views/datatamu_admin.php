@@ -232,7 +232,7 @@
                                               <a class="btn btn-link text-dark px-3 mb-0" href="/datatamu_admin/edit/<?= $tamu['id']; ?>">
                                                   <i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit
                                               </a>
-                                              <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="/datatamu_admin/delete/<?= $tamu['id']; ?>">
+                                              <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="/datatamu_admin/delete/<?= $tamu['id']; ?>" onclick="confirmDelete(<?= $tamu['id']; ?>)">
                                                   <i class="far fa-trash-alt me-2"></i>Hapus
                                               </a>
                                           </td>
@@ -388,6 +388,19 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
+
+<script>
+    function confirmDelete(id) {
+        // Display a confirmation dialog
+        var isConfirmed = confirm("Are you sure you want to delete this item?");
+
+        // If the user clicks OK in the confirmation dialog, proceed with the deletion
+        if (isConfirmed) {
+            var deleteUrl = "/datatamu_admin/delete/" + id;
+            window.location.href = deleteUrl;
+        }
+    }
+</script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
