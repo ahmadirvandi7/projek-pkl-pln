@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
   <link rel="icon" type="image/png" href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
   <title>
-    Beranda
+    Data driver
   </title>
   <!-- Fonts and icons -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -577,7 +577,7 @@
                   document.write(new Date().getFullYear())
                 </script>,
                 <i class="fa fa-heart"></i>
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">PT. PLN (Persero) Unit Induk Distribusi Lampung</a>
+                <a class="font-weight-bold" target="_blank">PT. PLN (Persero) Unit Induk Distribusi Lampung</a>
               </div>
             </div>
             <div class="col-lg-6">

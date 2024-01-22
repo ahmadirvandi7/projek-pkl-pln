@@ -91,4 +91,9 @@ class Home extends BaseController
         return view('datatamu_adminhumas');
     }
 
+    public function databerita_adminhumas(): string
+    {
+        return view('databerita_adminhumas');
+    }
+
 }

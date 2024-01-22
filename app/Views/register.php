@@ -49,33 +49,6 @@
         </span>
       </button>
       <div class="collapse navbar-collapse" id="navigation">
-        <!-- <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../pages/dashboard.html">
-              <i class="fa fa-chart-pie opacity-6  me-1"></i>
-              Dashboard
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link me-2" href="../pages/profile.html">
-              <i class="fa fa-user opacity-6  me-1"></i>
-              Profile
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link me-2" href="../pages/sign-up.html">
-              <i class="fas fa-user-circle opacity-6  me-1"></i>
-              Sign Up
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link me-2" href="../pages/sign-in.html">
-              <i class="fas fa-key opacity-6  me-1"></i>
-              Sign In
-            </a>
-          </li>
-        </ul> -->
-        
       </div>
     </div>
   </nav>
@@ -196,10 +169,10 @@
   </footer>
   <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
   <!--   Core JS Files   -->
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="material_dashboard/assets/js/core/popper.min.js"></script>
+  <script src="material_dashboard/assets/js/core/bootstrap.min.js"></script>
+  <script src="material_dashboard/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="material_dashboard/assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -212,7 +185,7 @@
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+  <script src="material_dashboard/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
 </body>
 
 </html>
