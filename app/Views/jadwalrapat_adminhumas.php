@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
   <link rel="icon" type="image/png" href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
   <title>
-    Beranda
+    Jadwal Rapat
   </title>
   <!-- Fonts and icons -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -78,6 +78,14 @@
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
             <span class="nav-link-text ms-1">Data Tamu</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/databerita_adminhumas">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Data Berita</span>
           </a>
         </li>
         <li class="nav-item">
@@ -684,7 +692,7 @@
                   document.write(new Date().getFullYear())
                 </script>,
                 <i class="fa fa-heart"></i>
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">PT. PLN (Persero) Unit Induk Distribusi Lampung</a>
+                <a class="font-weight-bold" target="_blank">PT. PLN (Persero) Unit Induk Distribusi Lampung</a>
               </div>
             </div>
             <div class="col-lg-6">

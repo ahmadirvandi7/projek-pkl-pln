@@ -40,6 +40,7 @@ $routes->get('/beranda_adminhumas', 'Home::beranda_adminhumas');
 $routes->get('/jadwalrapat_adminhumas', 'Home::jadwalrapat_adminhumas');
 $routes->get('/datadriver_adminhumas', 'Home::datadriver_adminhumas');
 $routes->get('/datatamu_adminhumas', 'Home::datatamu_adminhumas');
+$routes->get('/databerita_adminhumas', 'Home::databerita_adminhumas');
 
 
 

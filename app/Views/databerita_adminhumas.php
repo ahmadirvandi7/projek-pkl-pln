@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
   <link rel="icon" type="image/png" href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
   <title>
-    Data tamu
+    Data Berita
   </title>
   <!-- Fonts and icons -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -49,7 +49,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link " href="/beranda_admin">
+          <a class="nav-link " href="/beranda_adminhumas">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
             </div>
@@ -57,7 +57,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="/jadwalrapat_admin">
+          <a class="nav-link " href="/jadwalrapat_adminhumas">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
@@ -65,7 +65,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/datadriver_admin">
+          <a class="nav-link" href="/datadriver_adminhumas">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -73,14 +73,21 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="/datatamu_admin">
+          <a class="nav-link" href="/datatamu_adminhumas">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
             <span class="nav-link-text ms-1">Data Tamu</span>
           </a>
         </li>
-        
+        <li class="nav-item">
+          <a class="nav-link active" href="/databerita_adminhumas">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Data Berita</span>
+          </a>
+        </li>
         <li class="nav-item">
           <a class="nav-link " href="../pages/virtual-reality.html">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -202,7 +209,7 @@
                       <div class="card-header pb-0 p-3">
                           <div class="row">
                               <div class="col-8 d-flex align-items-center">
-                                  <a class="btn btn-primary btn-sm mb-0 w-150" href="/datatamu_admin/create" type="button">Tambah Data</a>
+                                  <a class="btn btn-primary btn-sm mb-0 w-150" href="/databerita_adminhumas/create" type="button">Tambah Data</a>
                               </div>
                           </div>
                       </div>
@@ -219,26 +226,7 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                  <?php $nomor = 1; ?>
-                                  <?php foreach ($tamu as $tamu) : ?>
-                                      <tr>
-                                          <td><?= $nomor++; ?></td>
-                                          <td><?= $tamu['nama_tamu']; ?></td>
-                                          <td><?= $tamu['asal_instansi']; ?></td>
-                                          <td><?= $tamu['no_telepon']; ?></td>
-                                          <td><?= $tamu['tanggal_waktu']; ?></td>
-                                          <!-- Tambah kolom lain sesuai kebutuhan -->
-                                          <td>
-                                              <a class="btn btn-link text-dark px-3 mb-0" href="/datatamu_admin/edit/<?= $tamu['id']; ?>">
-                                                  <i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit
-                                              </a>
-                                              <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="/datatamu_admin/delete/<?= $tamu['id']; ?>" onclick="confirmDelete(<?= $tamu['id']; ?>)">
-                                                  <i class="far fa-trash-alt me-2"></i>Hapus
-                                              </a>
-                                          </td>
-
-                                      </tr>
-                                  <?php endforeach; ?>
+                                  //isi tabel
                               </tbody>
                           </table>
                       </div>
