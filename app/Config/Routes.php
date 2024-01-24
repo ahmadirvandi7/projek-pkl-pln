@@ -23,7 +23,8 @@ $routes->get('/datatamu_admin/create', 'DatatamuController::create');
 $routes->post('/datatamu_admin/store', 'DatatamuController::store');
 $routes->get('/datatamu_admin/edit/(:num)', 'DatatamuController::edit/$1');
 $routes->post('/datatamu_admin/update/(:num)', 'DatatamuController::update/$1');
-$routes->get('datatamu_admin/delete/(:num)', 'DatatamuController::delete/$1');
+$routes->get('/datatamu_admin/delete/(:num)', 'DatatamuController::delete/$1');
+$routes->get('/cetakdatatamu_admin', 'DatatamuController::cetak');
 
 
 //superadmin
@@ -35,7 +36,8 @@ $routes->get('/jadwalrapat_superadmin/create', 'JadwalRapatController::create');
 $routes->post('/jadwalrapat_superadmin/store', 'JadwalRapatController::store');
 $routes->get('/jadwalrapat_superadmin/edit/(:num)', 'JadwalRapatController::edit/$1');
 $routes->post('/jadwalrapat_superadmin/update/(:num)', 'JadwalRapatController::update/$1');
-$routes->get('jadwalrapat_superadmin/delete/(:num)', 'JadwalRapatController::delete/$1');
+$routes->get('/jadwalrapat_superadmin/delete/(:num)', 'JadwalRapatController::delete/$1');
+$routes->get('/cetakjadwalrapat_superadmin', 'JadwalRapatController::cetak');
 
 $routes->get('/datadriver_superadmin', 'Home::datadriver_superadmin');
 $routes->get('/datatamu_superadmin', 'Home::datatamu_superadmin');
