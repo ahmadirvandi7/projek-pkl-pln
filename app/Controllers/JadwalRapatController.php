@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Controllers;
-
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\JadwalRapatModel;
@@ -20,6 +19,12 @@ class JadwalRapatController extends BaseController
     {
         $data['jadwal_rapat'] = $this->jadwalrapatModel->getJadwalRapat();
         return view('/jadwalrapat_superadmin', $data);
+    }
+
+    public function cetak()
+    {
+        $data['jadwal_rapat'] = $this->jadwalrapatModel->getJadwalRapat();
+        return view('/cetakjadwalrapat_superadmin', $data);
     }
 
     public function create()

@@ -206,8 +206,14 @@
                               </div>
                           </div>
                       </div>
+                        <style>
+                          .table-sm td,
+                          .table-sm th {
+                            font-size: 14px;
+                          }
+                        </style>
                       <div class="card-body p-3">
-                          <table class="table">
+                          <table class="table table-sm">
                               <thead>
                                   <tr>
                                       <th>No.</th>
@@ -241,6 +247,11 @@
                                   <?php endforeach; ?>
                               </tbody>
                           </table>
+                          <h6>Cetak <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"
+                            onclick="window.location.href='/cetakdatatamu_admin'">
+                            <i class="fas fa-file-pdf text-lg me-1"></i> PDF
+                            </button>
+                          </h6>
                       </div>
                   </div>
               </div>

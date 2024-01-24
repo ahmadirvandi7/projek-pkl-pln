@@ -303,7 +303,7 @@
               </div>
             </div>
             <div class="card-body p-2">
-              <table class="table table-sm"> <!-- Tambahkan class table-sm untuk mengurangi ukuran font -->
+              <table class="table table-sm"> 
                 <thead>
                   <tr>
                     <th>Tanggal</th>
@@ -361,6 +361,15 @@
                   <?php endforeach; ?>
                 </tbody>
               </table>
+              <!-- <a href="/cetakjadwalrapat_superadmin">Cetak PDF</a> -->
+              <h6>Cetak <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"
+                onclick="window.location.href='/cetakjadwalrapat_superadmin'">
+                <i class="fas fa-file-pdf text-lg me-1"></i> PDF
+              </button></h6>
+
+              <!-- <div class="cetak">
+                <p><a href="#" onclick="window.print();">Cetak Laporan</a></p>
+              </div> -->
             </div>
           </div>
         </div>
