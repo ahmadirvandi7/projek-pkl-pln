@@ -55,10 +55,10 @@ class Home extends BaseController
         return view('beranda_superadmin');
     }
 
-    public function jadwalrapat_superadmin(): string
-    {
-        return view('jadwalrapat_superadmin');
-    }
+    // public function jadwalrapat_superadmin(): string
+    // {
+    //     return view('jadwalrapat_superadmin');
+    // }
 
     public function datadriver_superadmin(): string 
     {
