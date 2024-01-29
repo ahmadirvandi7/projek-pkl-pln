@@ -25,10 +25,10 @@ class Home extends BaseController
         return view('beranda_admin');
     }
 
-    public function jadwalrapat_admin(): string
-    {
-        return view('jadwalrapat_admin');
-    }
+    // public function jadwalrapat_admin(): string
+    // {
+    //     return view('jadwalrapat_admin');
+    // }
 
     public function datadriver_admin(): string
     {
@@ -65,10 +65,10 @@ class Home extends BaseController
         return view('datadriver_superadmin');
     }
 
-    public function datatamu_superadmin(): string
-    {
-        return view('datatamu_superadmin');
-    }
+    // public function datatamu_superadmin(): string
+    // {
+    //     return view('datatamu_superadmin');
+    // }
 
     //admin humas
     public function beranda_adminhumas(): string

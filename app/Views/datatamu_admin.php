@@ -192,10 +192,10 @@
             <div class="col-xl-6 mb-xl-0 mb-4">
               <div class="card bg-transparent shadow-xl"> -->
                 
-              </div>
-            </div>
+              <!-- </div>
+            </div> -->
             <!--  -->
-            <div class="container-fluid py-4">
+          <div class="container-fluid py-4">
             <div class="row">
               <div class="col-md-12 mb-lg-0 mb-4">
                   <div class="card mt-4">
@@ -255,8 +255,7 @@
                       </div>
                   </div>
               </div>
-          </div>
-
+            </div>
           </div>
 
           </div>
