@@ -283,7 +283,17 @@
       </div>
     </nav>
     <!-- End Navbar -->
+
+
+
     <!--  -->
+    <style>
+      .table-sm td,
+      .table-sm th {
+        font-size: 14px;
+      }
+    </style>
+
     <div class="container-fluid py-4">
       <div class="row">
         <div class="col-md-12 mb-lg-0 mb-4">
@@ -291,72 +301,72 @@
             <div class="card-header pb-0 p-3">
               <div class="row">
                 <div class="col-8 d-flex align-items-center">
-                  <a class="btn btn-primary btn-sm mb-0 w-150" href="/jadwalrapat_admin/create" type="button">Tambah
-                    Data</a>
+                  <h6>Jadwal Rapat dan Agenda</h6>
                 </div>
               </div>
             </div>
-            <div class="card-body p-3">
-              <table class="table">
+            <div class="card-body p-2">
+              <table class="table table-sm">
                 <thead>
                   <tr>
-                    <th>No.</th>
-                    <th>Nama Tamu</th>
-                    <th>Asal Instansi</th>
-                    <th>No. Telepon</th>
-                    <th>Tanggal dan Waktu</th>
-                    <th>Aksi</th>
+                    <th>Tanggal</th>
+                    <th>Mulai</th>
+                    <th>Selesai</th>
+                    <th>Agenda</th>
+                    <th>Ruangan</th>
+                    <th>Bidang</th>
+                    <th>Jumlah Peserta</th>
+                    <th>Status Ruangan</th>
+                    
                   </tr>
                 </thead>
                 <tbody>
-
+                  <?php
+                  foreach ($jadwal_rapat as $index => $rapat):
+                    ?>
+                    <tr>
+                      <td>
+                        <?= date('d-m-Y', strtotime($rapat['tanggal'])); ?>
+                      </td>
+                      <td>
+                        <?= date('H:i', strtotime($rapat['mulai'])); ?>
+                      </td>
+                      <td>
+                        <?= date('H:i', strtotime($rapat['selesai'])); ?>
+                      </td>
+                      <td>
+                        <?= $rapat['agenda']; ?>
+                      </td>
+                      <td>
+                        <?= $rapat['ruangan']; ?>
+                      </td>
+                      <td>
+                        <?= $rapat['bidang']; ?>
+                      </td>
+                      <td>
+                        <?= $rapat['jumlah_peserta']; ?>
+                      </td>
+                      <td>
+                        <?= $rapat['status_ruangan']; ?>
+                      </td>
+                      
+                    </tr>
+                  <?php endforeach; ?>
                 </tbody>
               </table>
+              <!-- <a href="/cetakjadwalrapat_superadmin">Cetak PDF</a> -->
+              <h6>Cetak <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"
+                  onclick="window.location.href='/cetakjadwalrapat_admin'">
+                  <i class="fas fa-file-pdf text-lg me-1"></i> PDF
+                </button></h6>
+
+              <!-- <div class="cetak">
+                <p><a href="#" onclick="window.print();">Cetak Laporan</a></p>
+              </div> -->
             </div>
           </div>
         </div>
       </div>
-
-    </div>
-
-
-    <!--  -->
-    <div class="container-fluid py-4">
-      <div class="row">
-        <div class="col-md-12 mb-lg-0 mb-4">
-          <div class="card mt-4">
-            <div class="card-header pb-0 p-3">
-              <div class="row">
-                <!-- <div class="col-8 d-flex align-items-center">
-                                  <a class="btn btn-primary btn-sm mb-0 w-150" href="/datatamu_admin/create" type="button">Tambah Data</a>
-                              </div> -->
-              </div>
-            </div>
-            <div class="card-body p-3">
-              <h6>history</h6>
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>No.</th>
-                    <th>Nama Tamu</th>
-                    <th>Asal Instansi</th>
-                    <th>No. Telepon</th>
-                    <th>Tanggal dan Waktu</th>
-                    <th>Aksi</th>
-                  </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    </div>
     </div>
 
     </div>

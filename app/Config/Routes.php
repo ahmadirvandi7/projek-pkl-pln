@@ -13,7 +13,9 @@ $routes->get('/register', 'Home::register');
 
 //admin
 $routes->get('/beranda_admin', 'Home::beranda_admin');
-$routes->get('/jadwalrapat_admin', 'Home::jadwalrapat_admin');
+$routes->get('/jadwalrapat_admin', 'JadwalRapatController::jadwalrapat_admin');
+$routes->get('/cetakjadwalrapat_admin', 'JadwalRapatController::cetak2');
+
 $routes->get('/datadriver_admin', 'Home::datadriver_admin');
 
 // $routes->get('/datatamu_admin', 'Home::datatamu_admin');
@@ -40,7 +42,8 @@ $routes->get('/jadwalrapat_superadmin/delete/(:num)', 'JadwalRapatController::de
 $routes->get('/cetakjadwalrapat_superadmin', 'JadwalRapatController::cetak');
 
 $routes->get('/datadriver_superadmin', 'Home::datadriver_superadmin');
-$routes->get('/datatamu_superadmin', 'Home::datatamu_superadmin');
+$routes->get('/datatamu_superadmin', 'DatatamuController::index2');
+$routes->get('/cetakdatatamu_superadmin', 'DatatamuController::cetak2');
 
 
 //admin humas

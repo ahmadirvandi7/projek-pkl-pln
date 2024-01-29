@@ -21,10 +21,22 @@ class DatatamuController extends BaseController
         return view('/datatamu_admin', $data);
     }
 
+    public function index2()
+    {
+        $data['tamu'] = $this->tamuModel->getTamu();
+        return view('/datatamu_superadmin', $data);
+    }
+
     public function cetak()
     {
         $data['tamu'] = $this->tamuModel->getTamu();
         return view('/cetakdatatamu_admin', $data);
+    }
+
+    public function cetak2()
+    {
+        $data['tamu'] = $this->tamuModel->getTamu();
+        return view('/cetakdatatamu_superadmin', $data);
     }
 
     public function create()
