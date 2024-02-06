@@ -49,7 +49,7 @@
         </tr>
         <?php
         // koneksi database
-        $koneksi = mysqli_connect("localhost", "root", "", "projek-pkl-pln");
+        $koneksi = mysqli_connect("localhost", "root", "", "fiks-projek-pkl");
 
         // menampilkan data
         $data = mysqli_query($koneksi, "select * from tamu");

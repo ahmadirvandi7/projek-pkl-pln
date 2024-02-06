@@ -38,7 +38,7 @@
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
-  <div class="min-height-300 bg-primary position-absolute w-100"></div>
+  <div class="min-height-300  position-absolute w-100"  style="background-color: #2596be;"></div>
   <aside
     class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 "
     id="sidenav-main">
@@ -92,7 +92,7 @@
           </a>
         </li>
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link " href="../pages/virtual-reality.html">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -100,8 +100,8 @@
             </div>
             <span class="nav-link-text ms-1">Virtual Reality</span>
           </a>
-        </li>
-        <li class="nav-item">
+        </li> -->
+        <!-- <li class="nav-item">
           <a class="nav-link " href="../pages/rtl.html">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -109,11 +109,11 @@
             </div>
             <span class="nav-link-text ms-1">RTL</span>
           </a>
-        </li>
+        </li> -->
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link " href="../pages/profile.html">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -121,28 +121,28 @@
             </div>
             <span class="nav-link-text ms-1">Profile</span>
           </a>
-        </li>
+        </li> -->
         <li class="nav-item">
-          <a class="nav-link " href="../pages/sign-in.html">
+          <a class="nav-link " href="/Logout">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Sign In</span>
+            <span class="nav-link-text ms-1">Logout</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="../pages/sign-up.html">
+          <a class="nav-link " href="/Login">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-collection text-info text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Sign Up</span>
+            <span class="nav-link-text ms-1">Logout</span>
           </a>
         </li>
       </ul>
     </div>
-    <div class="sidenav-footer mx-3 ">
+    <!-- <div class="sidenav-footer mx-3 ">
       <div class="card card-plain shadow-none" id="sidenavCard">
         <img class="w-50 mx-auto" src="/material_dashboard/assets/img/illustrations/icon-documentation.svg"
           alt="sidebar_illustration">
@@ -156,7 +156,7 @@
       <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank"
         class="btn btn-dark btn-sm w-100 mb-3">Documentation</a>
       <a class="btn btn-primary btn-sm mb-0 w-100" href="#" type="button">Upgrade to pro</a>
-    </div>
+    </div> -->
   </aside>
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
@@ -219,7 +219,7 @@
         <div class="col-md-12 mb-lg-0 mb-4">
           <div class="card mt-4">
             <div class="card-body p-3">
-              <p class="text-uppercase text-sm">form tambah data tamu</p>
+              <p class="text-uppercase text-sm">Form Tambah Data Tamu</p>
               <form action="<?= site_url('/datatamu_admin/store') ?>" method="post">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -230,7 +230,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                  <label for="asal_instansi" class="form-control-label">Asal Instansi</label>
+                    <label for="asal_instansi" class="form-control-label">Asal Instansi</label>
                     <input class="form-control" id="asal_instansi" type="text"
                       placeholder="Masukkan asal instansi disini ..." name="asal_instansi" required>
                   </div>
@@ -249,14 +249,21 @@
                       name="tanggal_waktu" onclick="setDateTimeNow()" required>
                   </div>
                 </div>
-                <button class="btn btn-primary btn-sm mb-0 w-150" type="submit">Submit</button>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="tujuan" class="form-control-label">Tujuan</label>
+                    <input class="form-control" id="tujuan" type="text" placeholder="Masukkan tujuan disini ..."
+                      name="tujuan" required>
+                  </div>
+                </div>
+                <button class="btn btn-primary btn-sm mb-0 w-150" type="submit" style="background-color: #2596be;">Submit</button>
               </form>
             </div>
           </div>
         </div>
       </div>
-
     </div>
+
 
     </div>
     </div>

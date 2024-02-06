@@ -52,15 +52,18 @@ class DatatamuController extends BaseController
                 'tanggal_waktu' => $this->request->getPost('tanggal_waktu'),
                 'asal_instansi' => $this->request->getPost('asal_instansi'),
                 'no_telepon' => $this->request->getPost('no_telepon'),
+                'tujuan' => $this->request->getPost('tujuan'),
             ];
 
             $this->tamuModel->saveTamu($data);
 
             return redirect()->to(base_url('/datatamu_admin'));
         } catch (\Throwable $th) {
-            return redirect()->to(base_url('/'));
+            log_message('error', 'Error in storing tamu: ' . $th->getMessage());
+            return redirect()->to(base_url('/'))->with('error', 'Terjadi kesalahan. Silakan coba lagi.');
         }
     }
+
 
     public function edit($id)
     {
@@ -75,12 +78,14 @@ class DatatamuController extends BaseController
             'tanggal_waktu' => $this->request->getPost('tanggal_waktu'),
             'asal_instansi' => $this->request->getPost('asal_instansi'),
             'no_telepon' => $this->request->getPost('no_telepon'),
+            'tujuan' => $this->request->getPost('tujuan'),
         ];
 
         $this->tamuModel->updateTamu($id, $data);
 
         return redirect()->to(base_url('/datatamu_admin'));
     }
+
 
     public function delete($id)
     {
