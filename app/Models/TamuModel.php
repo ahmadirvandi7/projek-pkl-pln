@@ -6,13 +6,13 @@ use CodeIgniter\Model;
 
 class TamuModel extends Model
 {
-    protected $table            = 'tamu';
+    protected $table            = 'data_tamu';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_tamu', 'tanggal_waktu', 'asal_instansi', 'no_telepon'];
+    protected $allowedFields    = ['nama_tamu', 'tanggal_waktu', 'asal_instansi', 'no_telepon','tujuan'];
 
     // Dates
     protected $useTimestamps = true;

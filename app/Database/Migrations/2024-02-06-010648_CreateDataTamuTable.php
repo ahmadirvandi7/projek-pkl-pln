@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateTamuTable extends Migration
+class CreateDataTamuTable extends Migration
 {
     public function up()
     {
@@ -52,7 +52,7 @@ class CreateTamuTable extends Migration
         ]);
 
         $this->forge->addKey('id', true);
-        $this->forge->createTable('tamu');
+        $this->forge->createTable('data_tamu');
     }
 
     public function down()

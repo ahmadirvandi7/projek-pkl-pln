@@ -38,7 +38,7 @@
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
-    <div class="min-height-300 bg-primary position-absolute w-100"></div>
+    <div class="min-height-300  position-absolute w-100" style="background-color: #2596be;"></div>
     <aside
         class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 "
         id="sidenav-main">
@@ -351,7 +351,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary btn-sm mb-0 w-150" type="submit">Submit</button>
+                                <button class="btn btn-primary btn-sm mb-0 w-150" type="submit" style="background-color: #2596be;">Submit</button>
                             </form>
 
                         </div>
