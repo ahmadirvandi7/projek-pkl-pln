@@ -6,7 +6,7 @@
   <link rel="apple-touch-icon" sizes="76x76"
     href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
   <link rel="icon" type="image/png" href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
-    <title>Data Tamu</title>
+    <title>Data daftar pemesanan</title>
 </head>
 
 <body>
@@ -42,18 +42,21 @@
     <table>
         <tr>
             <th>No</th>
-            <th>Nama tamu</th>
-            <th>Tanggal dan waktu</th>
-            <th>Asal Instansi</th>
-            <th>No Telepon</th>
+            <th>Nama Driver</th>
+            <th>Nomor Polisi</th>
+            <th>Tanggal berangkat</th>
+            <th>Tanggal kedatangan</th>
+            <th>Asal</th>
             <th>Tujuan</th>
+            <th>Keperluan</th>
+            <th>status</th>
         </tr>
         <?php
         // koneksi database
         $koneksi = mysqli_connect("localhost", "root", "", "fiks-projek-pkl");
 
         // menampilkan data
-        $data = mysqli_query($koneksi, "select * from data_tamu");
+        $data = mysqli_query($koneksi, "select * from daftar_pemesanan");
         while ($d = mysqli_fetch_array($data)) {
             ?>
             <tr>
@@ -61,19 +64,28 @@
                     <?php echo $d['id'] ?>
                 </td>
                 <td>
-                    <?php echo $d['nama_tamu']; ?>
+                    <?php echo $d['nama_driver']; ?>
                 </td>
                 <td>
-                    <?php echo $d['tanggal_waktu']; ?>
+                    <?php echo $d['nomor_polisi']; ?>
                 </td>
                 <td>
-                    <?php echo $d['asal_instansi']; ?>
+                    <?php echo $d['tanggal_berangkat']; ?>
                 </td>
                 <td>
-                    <?php echo $d['no_telepon']; ?>
+                    <?php echo $d['tanggal_kedatangan']; ?>
+                </td>
+                <td>
+                    <?php echo $d['asal']; ?>
                 </td>
                 <td>
                     <?php echo $d['tujuan']; ?>
+                </td>
+                <td>
+                    <?php echo $d['keperluan']; ?>
+                </td>
+                <td>
+                    <?php echo $d['status']; ?>
                 </td>
             </tr>
         <?php

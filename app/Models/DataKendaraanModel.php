@@ -4,18 +4,20 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class JadwalRapatModel extends Model
+class DataKendaraanModel extends Model
 {
-    protected $table            = 'jadwal_rapat';
+    protected $table            = 'data_kendaraan';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['tanggal','mulai','selesai','agenda','ruangan','bidang','jumlah_peserta','status_ruangan'];
+    protected $allowedFields    = ['nopol_kendaraan','merk'];
+
+    protected bool $allowEmptyInserts = false;
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
@@ -38,35 +40,27 @@ class JadwalRapatModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getJadwalRapat()
+    public function getKendaraan()
     {
         return $this->findAll();
     }
 
-    public function getJadwalRapat1()
-    {
-        return $this->where('tanggal >=', date('Y-m-d'))
-                    ->where('selesai >', date('H:i:s'))
-                    ->where('mulai <=', date('H:i:s'))
-                    ->findAll();
-    }
-
-    public function saveJadwalRapat($data)
+    public function saveKendaraan($data)
     {
         $this->insert($data);
     }
 
-    public function findJadwalRapat($id)
+    public function findKendaraan($id)
     {
         return $this->find($id);
     }
 
-    public function updateJadwalRapat($id, $data)
+    public function updateKendaraan($id, $data)
     {
         $this->update($id, $data);
     }
 
-    public function deleteJadwalRapat($id)
+    public function deleteKendaraan($id)
     {
         $this->delete($id);
     }

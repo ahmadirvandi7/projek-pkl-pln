@@ -22,7 +22,7 @@
         href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
     <link rel="icon" type="image/png" href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
     <title>
-        Data Berita
+        Data driver
     </title>
     <!-- Fonts and icons -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -38,7 +38,7 @@
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
-    <div class="min-height-300 position-absolute w-100" style="background-color: #2596be;"></div>
+    <div class="min-height-300  position-absolute w-100" style="background-color: #2596be;"></div>
     <aside
         class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 "
         id="sidenav-main">
@@ -56,7 +56,7 @@
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link " href="/beranda_adminhumas">
+                    <a class="nav-link " href="/beranda_superadmin">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
@@ -65,7 +65,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/jadwalrapat_adminhumas">
+                    <a class="nav-link " href="/jadwalrapat_superadmin">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
@@ -74,21 +74,21 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="">
-                        <div
-                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">Data Berita</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/datadriver_adminhumas">
+                    <a class="nav-link active" href="/datadriver_superadmin">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
                         </div>
                         <span class="nav-link-text ms-1">Data Driver</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/datatamu_superadmin">
+                        <div
+                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Data Tamu</span>
                     </a>
                 </li>
 
@@ -111,7 +111,14 @@
                 <li class="nav-item mt-3">
                     <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
                 </li>
-
+                <!-- <li class="nav-item">
+          <a class="nav-link " href="../pages/profile.html">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Profile</span>
+          </a>
+        </li> -->
                 <li class="nav-item">
                     <a class="nav-link " href="/logout">
                         <div
@@ -130,8 +137,20 @@
                         <span class="nav-link-text ms-1">Login</span>
                     </a>
                 </li>
-            </ul>
         </div>
+        <!-- <div class="sidenav-footer mx-3 ">
+      <div class="card card-plain shadow-none" id="sidenavCard">
+        <img class="w-50 mx-auto" src="material_dashboard/assets/img/illustrations/icon-documentation.svg" alt="sidebar_illustration">
+        <div class="card-body text-center p-3 w-100 pt-0">
+          <div class="docs-info">
+            <h6 class="mb-0">Need help?</h6>
+            <p class="text-xs font-weight-bold mb-0">Please check our docs</p>
+          </div>
+        </div>
+      </div>
+      <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank" class="btn btn-dark btn-sm w-100 mb-3">Documentation</a>
+      <a class="btn btn-primary btn-sm mb-0 w-100" href="https://www.creative-tim.com/product/argon-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
+    </div> -->
     </aside>
     <main class="main-content position-relative border-radius-lg ">
         <!-- Navbar -->
@@ -142,9 +161,9 @@
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white"
                                 href="javascript:;">Pages</a></li>
-                        <li class="breadcrumb-item text-sm text-white active" aria-current="page">Admin</li>
+                        <li class="breadcrumb-item text-sm text-white active" aria-current="page">Billing</li>
                     </ol>
-                    <h6 class="font-weight-bolder text-white mb-0">Data Tamu</h6>
+                    <h6 class="font-weight-bolder text-white mb-0">Billing</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -175,7 +194,90 @@
                                 <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
                             </a>
                         </li>
-
+                        <li class="nav-item dropdown pe-2 d-flex align-items-center">
+                            <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-bell cursor-pointer"></i>
+                            </a>
+                            <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4"
+                                aria-labelledby="dropdownMenuButton">
+                                <li class="mb-2">
+                                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                                        <div class="d-flex py-1">
+                                            <div class="my-auto">
+                                                <img src="material_dashboard/assets/img/team-2.jpg"
+                                                    class="avatar avatar-sm  me-3 ">
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="text-sm font-weight-normal mb-1">
+                                                    <span class="font-weight-bold">New message</span> from Laur
+                                                </h6>
+                                                <p class="text-xs text-secondary mb-0">
+                                                    <i class="fa fa-clock me-1"></i>
+                                                    13 minutes ago
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                                        <div class="d-flex py-1">
+                                            <div class="my-auto">
+                                                <img src="material_dashboard/assets/img/small-logos/logo-spotify.svg"
+                                                    class="avatar avatar-sm bg-gradient-dark  me-3 ">
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="text-sm font-weight-normal mb-1">
+                                                    <span class="font-weight-bold">New album</span> by Travis Scott
+                                                </h6>
+                                                <p class="text-xs text-secondary mb-0">
+                                                    <i class="fa fa-clock me-1"></i>
+                                                    1 day
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                                        <div class="d-flex py-1">
+                                            <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
+                                                <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <title>credit-card</title>
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <g transform="translate(-2169.000000, -745.000000)"
+                                                            fill="#FFFFFF" fill-rule="nonzero">
+                                                            <g transform="translate(1716.000000, 291.000000)">
+                                                                <g transform="translate(453.000000, 454.000000)">
+                                                                    <path class="color-background"
+                                                                        d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"
+                                                                        opacity="0.593633743"></path>
+                                                                    <path class="color-background"
+                                                                        d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z">
+                                                                    </path>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="text-sm font-weight-normal mb-1">
+                                                    Payment successfully completed
+                                                </h6>
+                                                <p class="text-xs text-secondary mb-0">
+                                                    <i class="fa fa-clock me-1"></i>
+                                                    2 days
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -187,69 +289,41 @@
                     <div class="card mt-4">
                         <div class="card-header pb-0 p-3">
                             <div class="row">
+                                <!-- <div class="col-8 d-flex align-items-center">
+                  <a class="btn btn-primary btn-sm mb-0 w-150" href="/datadriver_superadmin/create" type="button"
+                    style="background-color: #2596be;">Tambah data driver</a>
+                </div> -->
                             </div>
                         </div>
                         <div class="card-body p-3">
-                            <p class="text-uppercase text-sm">Form Tambah Data Berita</p>
-                            <form action="<?= site_url('/databerita_adminhumas/store') ?>" method="post">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="kategori" class="form-control-label">Kategori</label>
-                                            <select class="form-control" id="kategori" name="kategori" required>
-                                                <option value="B2. Scoring Top Issue">B2. Scoring Top Issue</option>
-                                                <!-- Tambahkan opsi dropdown lain di sini jika diperlukan -->
-                                            </select>
-                                        </div>
+                            <p class="text-uppercase text-sm">Form Edit Data Kendaraan</p>
+                            <form action="<?= site_url('/datakendaraan_superadmin/update/' . $kendaraan['id']) ?>"
+                                method="post">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="nopol_kendaraan" class="form-control-label">Nomor Polisi
+                                            Kendaraan</label>
+                                        <input class="form-control" id="nopol_kendaraan" type="text"
+                                            name="nopol_kendaraan" value="<?= $kendaraan['nopol_kendaraan'] ?>"
+                                            required>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="tanggal" class="form-control-label">Tanggal</label>
-                                            <input class="form-control" id="tanggal" type="date" name="tanggal"
-                                                required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="media_pemberitaan" class="form-control-label">Media
-                                                Pemberitaan</label>
-                                            <select class="form-control" id="media_pemberitaan" name="media_pemberitaan"
-                                                required>
-                                                <option value="Media Online">Media Online</option>
-                                                <option value="Media Cetak">Media Cetak</option>
-                                                <option value="Media Elektronik">Media Elektronik</option>
-                                                <!-- Tambahkan opsi dropdown lain di sini jika diperlukan -->
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="judul_pemberitaan" class="form-control-label">Judul
-                                                Pemberitaan</label>
-                                            <input class="form-control" id="judul_pemberitaan" type="text"
-                                                name="judul_pemberitaan" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="link_pemberitaan" class="form-control-label">Link
-                                                Pemberitaan</label>
-                                            <input class="form-control" id="link_pemberitaan" type="text"
-                                                name="link_pemberitaan" required>
-                                        </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="merk" class="form-control-label">Merk Kendaraan</label>
+                                        <input class="form-control" id="merk" type="text" name="merk"
+                                            value="<?= $kendaraan['merk'] ?>" required>
                                     </div>
                                 </div>
                                 <button class="btn btn-primary btn-sm mb-0 w-150" type="submit"
-                                    style="background-color: #2596be;">Submit</button>
+                                    style="background-color: #2596be;">Update</button>
                             </form>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
-
-        <!--  -->
-
         <footer class="footer pt-3  ">
             <div class="container-fluid">
                 <div class="row align-items-center justify-content-lg-between">
@@ -265,6 +339,20 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
+                        <!-- <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+                </li>
+              </ul> -->
                     </div>
                 </div>
             </div>
@@ -375,23 +463,10 @@
             Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
         }
     </script>
-
-    <script>
-        function confirmDelete(id) {
-            // Display a confirmation dialog
-            var isConfirmed = confirm("Are you sure you want to delete this item?");
-
-            // If the user clicks OK in the confirmation dialog, proceed with the deletion
-            if (isConfirmed) {
-                var deleteUrl = "/datatamu_admin/delete/" + id;
-                window.location.href = deleteUrl;
-            }
-        }
-    </script>
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="/material_dashboard/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+    <script src="material_dashboard/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
 </body>
 
 </html>

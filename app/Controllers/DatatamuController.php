@@ -63,8 +63,7 @@ class DatatamuController extends BaseController
             return redirect()->to(base_url('/'))->with('error', 'Terjadi kesalahan. Silakan coba lagi.');
         }
     }
-
-
+    
     public function edit($id)
     {
         $data['tamu'] = $this->tamuModel->findTamu($id);

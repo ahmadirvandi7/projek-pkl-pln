@@ -197,80 +197,7 @@
                 aria-expanded="false">
                 <i class="fa fa-bell cursor-pointer"></i>
               </a>
-              <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
-                <li class="mb-2">
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="my-auto">
-                        <img src="material_dashboard/assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          <span class="font-weight-bold">New message</span> from Laur
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          13 minutes ago
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="my-auto">
-                        <img src="material_dashboard/assets/img/small-logos/logo-spotify.svg"
-                          class="avatar avatar-sm bg-gradient-dark  me-3 ">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          <span class="font-weight-bold">New album</span> by Travis Scott
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          1 day
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
-                        <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
-                          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                          <title>credit-card</title>
-                          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                              <g transform="translate(1716.000000, 291.000000)">
-                                <g transform="translate(453.000000, 454.000000)">
-                                  <path class="color-background"
-                                    d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"
-                                    opacity="0.593633743"></path>
-                                  <path class="color-background"
-                                    d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z">
-                                  </path>
-                                </g>
-                              </g>
-                            </g>
-                          </g>
-                        </svg>
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          Payment successfully completed
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          2 days
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-              </ul>
+              
             </li>
           </ul>
         </div>
@@ -279,47 +206,212 @@
     <!-- End Navbar -->
     <div class="container-fluid py-4">
       <div class="row">
-        <div class="col-md-12 mb-lg-0 mb-4">
+        <div class="col-md-6 mb-lg-0 mb-4">
           <div class="card mt-4">
             <div class="card-header pb-0 p-3">
               <div class="row">
                 <div class="col-8 d-flex align-items-center">
                   <a class="btn btn-primary btn-sm mb-0 w-150" href="/datadriver_superadmin/create" type="button"
-                    style="background-color: #2596be;">Tambah Data</a>
+                    style="background-color: #2596be;">Tambah driver</a>
                 </div>
               </div>
             </div>
             <div class="card-body p-2">
-              <table class="table table-sm">
+              <table class="table table-sm" style="font-size: 14px;">
                 <thead>
                   <tr>
-                    <th>Tanggal</th>
-                    <th>Mulai</th>
-                    <th>Selesai</th>
-                    <th>Agenda</th>
-                    <th>Ruangan</th>
-                    <th>Bidang</th>
-                    <th>Jumlah Peserta</th>
-                    <th>Status Ruangan</th>
-                    <th>Aksi</th>
+                    <th><small>ID</small></th>
+                    <th><small>nama driver</small></th>
+                    <th><small>Aksi</small></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <!-- 
-                    isi
-                   -->
+                  <?php foreach ($driver as $driver): ?>
+                    <tr>
+                      <td>
+                        <small>
+                          <?= $driver['id'] ?>
+                        </small>
+                      </td>
+                      <td>
+                        <small>
+                          <?= $driver['nama_driver'] ?>
+                        </small>
+                      </td>
+                      <td>
+                        <a class="btn btn-link btn-sm text-dark px-3 mb-0"
+                          href="/datadriver_superadmin/edit/<?= $driver['id']; ?>">
+                          <i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit
+                        </a>
+                        <a class="btn btn-link btn-sm text-danger text-gradient px-3 mb-0" href="#"
+                          onclick="confirmDelete(<?= $driver['id']; ?>)">
+                          <i class="far fa-trash-alt me-2"></i>Hapus
+                        </a>
+                      </td>
+                      <script>
+                        function confirmDelete(id) {
+                          if (confirm("Anda yakin ingin menghapus data ini?")) {
+                            window.location.href = "/datadriver_superadmin/delete/" + id;
+                          }
+                        }
+                      </script>
+                    </tr>
+                  <?php endforeach; ?>
                 </tbody>
+
               </table>
-              <!-- <a href="/cetakjadwalrapat_superadmin">Cetak PDF</a> -->
-              <h6>Cetak <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"
-                  onclick="window.location.href='/cetakjadwalrapat_superadmin'">
-                  <i class="fas fa-file-pdf text-lg me-1"></i> PDF
-                </button></h6>
             </div>
           </div>
         </div>
+        <div class="col-md-6">
+          <div class="card mt-4">
+            <div class="card-header pb-0 p-3">
+              <div class="row">
+                <div class="col-8 d-flex align-items-center">
+                  <a class="btn btn-primary btn-sm mb-0 w-150" href="/datakendaraan_superadmin/create" type="button"
+                    style="background-color: #2596be;">Tambah kendaraan</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-body p-2">
+              <table class="table table-sm" style="font-size: 14px;">
+                <thead>
+                  <tr>
+                    <th><small>ID</small></th>
+                    <th><small>Nomor Polisi</small></th>
+                    <th><small>Merk</small></th>
+                    <th><small>Aksi</small></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php foreach ($kendaraan as $kendaraan): ?>
+                    <tr>
+                      <td>
+                        <small>
+                          <?= $kendaraan['id'] ?>
+                        </small>
+                      </td>
+                      <td>
+                        <small>
+                          <?= $kendaraan['nopol_kendaraan'] ?>
+                        </small>
+                      </td>
+                      <td>
+                        <small>
+                          <?= $kendaraan['merk'] ?>
+                        </small>
+                      </td>
+                      <td>
+                        <a class="btn btn-link btn-sm text-dark px-3 mb-0"
+                          href="/datakendaraan_superadmin/edit/<?= $kendaraan['id']; ?>">
+                          <i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit
+                        </a>
+                        <a class="btn btn-link btn-sm text-danger text-gradient px-3 mb-0" href="#"
+                          onclick="confirmDeleteKendaraan(<?= $kendaraan['id']; ?>)">
+                          <i class="far fa-trash-alt me-2"></i>Hapus
+                        </a>
+                      </td>
+
+                      <script>
+                        function confirmDeleteKendaraan(id) {
+                          if (confirm("Anda yakin ingin menghapus data ini?")) {
+                            window.location.href = "/datakendaraan_superadmin/delete/" + id;
+                          }
+                        }
+                      </script>
+
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card mt-4">
+              <div class="card-header pb-0 p-3">
+                <div class="row align-items-center">
+                  <div class="col-8">
+                  <a class="btn btn-primary btn-sm" href="/daftarpemesanan_superadmin/create"
+                      style="background-color: #2596be;">
+                      Tambah daftar pemesanan
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body p-2">
+                <table class="table table-sm" style="font-size: 14px;">
+                  <thead>
+                    <tr>
+                      <th><small>Nama Driver</small></th>
+                      <th><small>Nomor Polisi</small></th>
+                      <th><small>Tanggal Berangkat</small></th>
+                      <th><small>Tanggal Kedatangan</small></th>
+                      <th><small>Asal</small></th>
+                      <th><small>Tujuan</small></th>
+                      <th><small>Keperluan</small></th>
+                      <th><small>Status</small></th>
+                      <th><small>Aksi</small></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php foreach ($daftar_pemesanan as $pemesanan): ?>
+                      <tr>
+                        <td>
+                          <?= $pemesanan['nama_driver'] ?>
+                        </td>
+                        <td>
+                          <?= $pemesanan['nomor_polisi'] ?>
+                        </td>
+                        <td>
+                          <?= $pemesanan['tanggal_berangkat'] ?>
+                        </td>
+                        <td>
+                          <?= $pemesanan['tanggal_kedatangan'] ?>
+                        </td>
+                        <td>
+                          <?= $pemesanan['asal'] ?>
+                        </td>
+                        <td>
+                          <?= $pemesanan['tujuan'] ?>
+                        </td>
+                        <td>
+                          <?= $pemesanan['keperluan'] ?>
+                        </td>
+                        <td>
+                          <?= $pemesanan['status'] ?>
+                        </td>
+                        <td>
+                          <a class="btn btn-link btn-sm text-dark px-2 mb-0"
+                            href="/daftarpemesanan_superadmin/edit/<?= $pemesanan['id']; ?>">
+                            <i class="fas fa-pencil-alt text-dark me-1" aria-hidden="true"></i>Edit
+                          </a>
+                          <a class="btn btn-link btn-sm text-danger text-gradient px-2 mb-0"
+                            href="/daftarpemesanan_superadmin/delete/<?= $pemesanan['id']; ?>"
+                            onclick="confirmDelete(<?= $pemesanan['id']; ?>)">
+                            <i class="far fa-trash-alt me-1"></i>Hapus
+                          </a>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+                  </tbody>
+                </table>
+                <h6>Cetak <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"
+                  onclick="window.location.href='/datadriver_superadmin/cetak'">
+                  <i class="fas fa-file-pdf text-lg me-1"></i> PDF
+                </button></h6>
+              <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
+
+
+
     <footer class="footer pt-3  ">
       <div class="container-fluid">
         <div class="row align-items-center justify-content-lg-between">
@@ -334,20 +426,6 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <!-- <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                </li>
-              </ul> -->
           </div>
         </div>
       </div>

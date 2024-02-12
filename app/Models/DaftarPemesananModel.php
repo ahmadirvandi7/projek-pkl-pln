@@ -4,18 +4,20 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class JadwalRapatModel extends Model
+class DaftarPemesananModel extends Model
 {
-    protected $table            = 'jadwal_rapat';
+    protected $table            = 'daftar_pemesanan';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['tanggal','mulai','selesai','agenda','ruangan','bidang','jumlah_peserta','status_ruangan'];
+    protected $allowedFields    = ['nama_driver','nomor_polisi','tanggal_berangkat','tanggal_kedatangan','asal','tujuan','keperluan','status'];
+
+    protected bool $allowEmptyInserts = false;
 
     // Dates
-    protected $useTimestamps = true;
+    protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
@@ -38,35 +40,27 @@ class JadwalRapatModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getJadwalRapat()
+    public function getPemesanan()
     {
         return $this->findAll();
     }
 
-    public function getJadwalRapat1()
-    {
-        return $this->where('tanggal >=', date('Y-m-d'))
-                    ->where('selesai >', date('H:i:s'))
-                    ->where('mulai <=', date('H:i:s'))
-                    ->findAll();
-    }
-
-    public function saveJadwalRapat($data)
+    public function savePemesanan($data)
     {
         $this->insert($data);
     }
 
-    public function findJadwalRapat($id)
+    public function findPemesanan($id)
     {
         return $this->find($id);
     }
 
-    public function updateJadwalRapat($id, $data)
+    public function updatePemesanan($id, $data)
     {
         $this->update($id, $data);
     }
 
-    public function deleteJadwalRapat($id)
+    public function deletePemesanan($id)
     {
         $this->delete($id);
     }
