@@ -46,13 +46,14 @@
             <th>Tanggal dan waktu</th>
             <th>Asal Instansi</th>
             <th>No Telepon</th>
+            <th>Tujuan</th>
         </tr>
         <?php
         // koneksi database
         $koneksi = mysqli_connect("localhost", "root", "", "fiks-projek-pkl");
 
         // menampilkan data
-        $data = mysqli_query($koneksi, "select * from tamu");
+        $data = mysqli_query($koneksi, "select * from data_tamu");
         while ($d = mysqli_fetch_array($data)) {
             ?>
             <tr>
@@ -70,6 +71,9 @@
                 </td>
                 <td>
                     <?php echo $d['no_telepon']; ?>
+                </td>
+                <td>
+                    <?php echo $d['tujuan']; ?>
                 </td>
             </tr>
         <?php

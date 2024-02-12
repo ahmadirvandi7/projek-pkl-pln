@@ -35,6 +35,7 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="<?php echo base_url('material_dashboard/assets/css/argon-dashboard.css?v=2.0.4'); ?>"
     rel="stylesheet" />
+  <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -203,80 +204,7 @@
                 aria-expanded="false">
                 <i class="fa fa-bell cursor-pointer"></i>
               </a>
-              <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
-                <li class="mb-2">
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="my-auto">
-                        <img src="material_dashboard/assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          <span class="font-weight-bold">New message</span> from Laur
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          13 minutes ago
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="my-auto">
-                        <img src="material_dashboard/assets/img/small-logos/logo-spotify.svg"
-                          class="avatar avatar-sm bg-gradient-dark  me-3 ">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          <span class="font-weight-bold">New album</span> by Travis Scott
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          1 day
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
-                        <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
-                          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                          <title>credit-card</title>
-                          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                              <g transform="translate(1716.000000, 291.000000)">
-                                <g transform="translate(453.000000, 454.000000)">
-                                  <path class="color-background"
-                                    d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"
-                                    opacity="0.593633743"></path>
-                                  <path class="color-background"
-                                    d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z">
-                                  </path>
-                                </g>
-                              </g>
-                            </g>
-                          </g>
-                        </svg>
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          Payment successfully completed
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          2 days
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-              </ul>
+
             </li>
           </ul>
         </div>
@@ -286,7 +214,7 @@
     <style>
       .table-sm td,
       .table-sm th {
-        font-size: 14px;
+        font-size: 13px;
       }
     </style>
 
@@ -297,13 +225,13 @@
             <div class="card-header pb-0 p-3">
               <div class="row">
                 <div class="col-8 d-flex align-items-center">
-                  <a class="btn btn-primary btn-sm mb-0 w-150" href="/jadwalrapat_superadmin/create"
-                    type="button" style="background-color: #2596be;" >Tambah Data</a>
+                  <a class="btn btn-primary btn-sm mb-0 w-150" href="/jadwalrapat_superadmin/create" type="button"
+                    style="background-color: #2596be;">Tambah Data</a>
                 </div>
               </div>
             </div>
             <div class="card-body p-2">
-              <table class="table table-sm"> 
+              <table class="table table-sm">
                 <thead>
                   <tr>
                     <th>Tanggal</th>
@@ -348,6 +276,17 @@
                       </td>
                       <td>
                         <a class="btn btn-link text-dark px-1 mb-0"
+                          href="/jadwalrapat_superadmin/display/<?= $rapat['id']; ?>">
+                          <i class="ni ni-tv-2"></i>Tampilkan
+                        </a>
+                        <script>
+                          function openFullScreenPage(url) {
+                            var screenWidth = window.screen.width;
+                            var screenHeight = window.screen.height;
+                            window.open(url, '_blank', 'fullscreen=yes, scrollbars=auto');
+                          }
+                        </script>
+                        <a class="btn btn-link text-dark px-1 mb-0"
                           href="/jadwalrapat_superadmin/edit/<?= $rapat['id']; ?>">
                           <i class="fas fa-pencil-alt text-dark me-1" aria-hidden="true"></i>Edit
                         </a>
@@ -356,6 +295,7 @@
                           onclick="confirmDelete(<?= $rapat['id']; ?>)">
                           <i class="far fa-trash-alt me-1"></i>Hapus
                         </a>
+
                       </td>
                     </tr>
                   <?php endforeach; ?>
@@ -363,13 +303,10 @@
               </table>
               <!-- <a href="/cetakjadwalrapat_superadmin">Cetak PDF</a> -->
               <h6>Cetak <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"
-                onclick="window.location.href='/cetakjadwalrapat_superadmin'">
-                <i class="fas fa-file-pdf text-lg me-1"></i> PDF
-              </button></h6>
-
-              <!-- <div class="cetak">
-                <p><a href="#" onclick="window.print();">Cetak Laporan</a></p>
-              </div> -->
+                  onclick="window.location.href='/cetakjadwalrapat_superadmin'">
+                  <i class="fas fa-file-pdf text-lg me-1"></i> PDF
+                </button></h6>
+              <br>
             </div>
           </div>
         </div>
@@ -379,43 +316,7 @@
 
 
     <!--  -->
-    <div class="container-fluid py-4">
-      <div class="row">
-        <div class="col-md-12 mb-lg-0 mb-4">
-          <div class="card mt-4">
-            <div class="card-header pb-0 p-3">
-              <div class="row">
-                <!-- <div class="col-8 d-flex align-items-center">
-                                  <a class="btn btn-primary btn-sm mb-0 w-150" href="/datatamu_admin/create" type="button">Tambah Data</a>
-                              </div> -->
-              </div>
-            </div>
-            <div class="card-body p-3">
-              <h6>History</h6>
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-9">No.</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-9">Tanggal</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-9">Mulai</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-9">Selesai</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-9">Agenda</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-9">ruangan</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-9">Bidang</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-9">jumlah peserta</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-9">status ruangan</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  //ini apa
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
 
-    </div>
 
     <footer class="footer pt-3  ">
       <div class="container-fluid">

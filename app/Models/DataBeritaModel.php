@@ -6,13 +6,13 @@ use CodeIgniter\Model;
 
 class DataBeritaModel extends Model
 {
-    protected $table            = 'data_berita';
+    protected $table            = 'berita_pln';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['kategori','tanggal','media_pemberitaan','judul_pemberitaan','link_pemberitaan'];
 
     // Dates
     protected $useTimestamps = false;
@@ -37,4 +37,29 @@ class DataBeritaModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getBerita()
+    {
+        return $this->findAll();
+    }
+
+    public function saveBerita($data)
+    {
+        $this->insert($data);
+    }
+
+    public function findBerita($id)
+    {
+        return $this->find($id);
+    }
+
+    public function updateBerita($id, $data)
+    {
+        $this->update($id, $data);
+    }
+
+    public function deleteBerita($id)
+    {
+        $this->delete($id);
+    }
 }

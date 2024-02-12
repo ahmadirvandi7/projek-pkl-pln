@@ -16,6 +16,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76"
@@ -35,6 +36,33 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="<?php echo base_url('material_dashboard/assets/css/argon-dashboard.css?v=2.0.4'); ?>"
     rel="stylesheet" />
+
+  <style>
+    .table-sm a {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    .table-sm {
+      font-size: 15px;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .table-sm th,
+    .table-sm td {
+      border: 1px solid #dee2e6;
+      padding: 8px;
+    }
+
+    .table-sm tr {
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .table-sm tr:last-child {
+      border-bottom: none;
+    }
+  </style>
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -179,16 +207,7 @@
       </div>
     </nav>
     <!-- End Navbar -->
-    <!-- <div class="container-fluid py-4">
-      <div class="row">
-        <div class="col-lg-8">
-          <div class="row">
-            <div class="col-xl-6 mb-xl-0 mb-4">
-              <div class="card bg-transparent shadow-xl"> -->
 
-    </div>
-    </div>
-    <!--  -->
     <div class="container-fluid py-4">
       <div class="row">
         <div class="col-md-12 mb-lg-0 mb-4">
@@ -196,59 +215,92 @@
             <div class="card-header pb-0 p-3">
               <div class="row">
                 <div class="col-8 d-flex align-items-center">
-                  <a class="btn btn-primary btn-sm mb-0 w-150" href="/databerita_adminhumas/create" type="button">Tambah
-                    Data</a>
+                  <a class="btn btn-primary btn-sm mb-0 w-150" href="/databerita_adminhumas/create" type="button"
+                    style="background-color: #2596be;">Tambah Data</a>
                 </div>
               </div>
             </div>
             <div class="card-body p-3">
-              <table class="table">
+              <table class="table-sm">
                 <thead>
                   <tr>
-                    <th>No.</th>
-                    <th>Nama Tamu</th>
-                    <th>Asal Instansi</th>
-                    <th>No. Telepon</th>
-                    <th>Tanggal dan Waktu</th>
-                    <th>Aksi</th>
+                    <th class="text-sm">No.</th>
+                    <th class="text-sm">Kategori</th>
+                    <th class="text-sm">Tanggal</th>
+                    <th class="text-sm">Media Pemberitaan</th>
+                    <th class="text-sm">Judul Pemberitaan</th>
+                    <th class="text-sm">Link Pemberitaan</th>
+                    <th class="text-sm">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
-                  //isi tabel
+                  <?php if (!empty($berita)): ?>
+                    <?php foreach ($berita as $key => $item): ?>
+                      <tr>
+                        <td class="text-sm">
+                          <?= $key + 1 ?>
+                        </td>
+                        <td class="text-sm">
+                          <?= $item['kategori'] ?>
+                        </td>
+                        <td class="text-sm">
+                          <?= $item['tanggal'] ?>
+                        </td>
+                        <td class="text-sm">
+                          <?= $item['media_pemberitaan'] ?>
+                        </td>
+                        <td class="text-sm">
+                          <?= $item['judul_pemberitaan'] ?>
+                        </td>
+                        <td class="text-sm">
+                          <a class="btn btn-link btn-sm text-dark px-3 mb-0" href="<?= $item['link_pemberitaan'] ?>"
+                            target="_blank">
+                            <?= $item['link_pemberitaan'] ?>
+                          </a>
+                        </td>
+                        <td class="text-sm">
+                          <a class="btn btn-link btn-sm text-dark px-3 mb-0"
+                            href="/databerita_adminhumas/edit/<?= $item['id']; ?>">
+                            <i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit
+                          </a>
+                          <a class="btn btn-link btn-sm text-danger text-gradient px-3 mb-0" href="#"
+                            onclick="confirmDelete(<?= $item['id']; ?>)">
+                            <i class="far fa-trash-alt me-2"></i>Hapus
+                          </a>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+                  <?php else: ?>
+                    <tr>
+                      <td colspan="7">Tidak ada data berita</td>
+                    </tr>
+                  <?php endif; ?>
                 </tbody>
               </table>
+              <h6>Cetak <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"
+                onclick="window.location.href='/databerita_adminhumas/cetak'">
+                <i class="fas fa-file-pdf text-lg me-1"></i> PDF
+              </button></h6>
+              
             </div>
           </div>
         </div>
       </div>
-
     </div>
 
-    </div>
-    </div>
-    <div class="col-lg-4">
-      <!--  -->
-    </div>
-    </div>
-    <!-- <div class="row">
-        <div class="col-md-7 mt-4">
-          <div class="card">
-            
-            <div class="card-body pt-4 p-3">
-              <ul class="list-group">
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-5 mt-4">
-          
-        </div>
-      </div> -->
+
     <footer class="footer pt-3  ">
       <div class="container-fluid">
         <div class="row align-items-center justify-content-lg-between">
           <div class="col-lg-6 mb-lg-0 mb-4">
             <div class="copyright text-center text-sm text-muted text-lg-start">
+              <script>
+                function confirmDelete(id) {
+                  if (confirm("Anda yakin ingin menghapus data ini?")) {
+                    window.location.href = "/databerita_adminhumas/delete/" + id;
+                  }
+                }
+              </script>
               ©
               <script>
                 document.write(new Date().getFullYear())

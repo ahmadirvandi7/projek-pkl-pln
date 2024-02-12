@@ -1,39 +1,53 @@
 <?php
 
 namespace App\Controllers;
+use App\Controllers\BaseController;
+use CodeIgniter\HTTP\ResponseInterface;
+use App\Models\JadwalRapatModel;
+use App\Models\DaftarPemesananModel;
+use App\Models\TamuModel;
+use App\Models\DataBeritaModel;
 
 class Home extends BaseController
 {
-    public function index(): string
+    protected $jadwalrapatModel;
+    protected $daftarpemesananModel;
+    protected $tamuModel;
+    protected $databeritaModel;
+
+    public function __construct()
     {
-        return view('welcome_message');
+        $this->jadwalrapatModel = new JadwalRapatModel();
+        $this->daftarpemesananModel = new DaftarPemesananModel();
+        $this->tamuModel = new TamuModel();
+        $this->databeritaModel = new DataBeritaModel();
+    }
+    public function index()
+    {
+        $data['jadwal_rapat'] = $this->jadwalrapatModel->getJadwalRapat();
+        $data['daftar_pemesanan'] = $this->daftarpemesananModel->getPemesanan();
+        $data['data_tamu'] = $this->tamuModel->getTamu();
+        $data['berita_pln'] = $this->databeritaModel->getBerita();
+
+        $path="beranda_admin";
+        if(in_groups("superadmin")){
+            $path= "beranda_superadmin";
+        }else if(in_groups("adminhumas")){
+            $path= "beranda_adminhumas";
+        }
+        return redirect()->route($path,$data);
     }
 
-    public function login(): string
-    {
-        return view('login');
-    }
-
-    public function register(): string
-    {
-        return view('register');
-    }
-
-    //admin
-    public function beranda_admin(): string
-    {
-        return view('beranda_admin');
-    }
 
     // public function jadwalrapat_admin(): string
     // {
     //     return view('jadwalrapat_admin');
     // }
 
-    public function datadriver_admin(): string
-    {
-        return view('datadriver_admin');
-    }
+    // public function datadriver_admin(): string
+    // {
+    //     return view('datadriver_admin');
+    // }
 
     // public function datatamu_admin(): string
     // {
@@ -50,50 +64,17 @@ class Home extends BaseController
 
 
     //superadmin
-    public function beranda_superadmin(): string
-    {
-        return view('beranda_superadmin');
-    }
-
-    // public function jadwalrapat_superadmin(): string
+    // public function beranda_superadmin(): string
     // {
-    //     return view('jadwalrapat_superadmin');
+    //     return view('beranda_superadmin');
     // }
 
-    public function datadriver_superadmin(): string 
-    {
-        return view('datadriver_superadmin');
-    }
 
-    // public function datatamu_superadmin(): string
+    // //admin humas
+    // public function beranda_adminhumas(): string
     // {
-    //     return view('datatamu_superadmin');
+    //     return view('beranda_adminhumas');
     // }
 
-    //admin humas
-    public function beranda_adminhumas(): string
-    {
-        return view('beranda_adminhumas');
-    }
-
-    public function jadwalrapat_adminhumas(): string
-    {
-        return view('jadwalrapat_adminhumas');
-    }
-
-    public function datadriver_adminhumas(): string
-    {
-        return view('datadriver_adminhumas');
-    }
-
-    public function datatamu_adminhumas(): string
-    {
-        return view('datatamu_adminhumas');
-    }
-
-    public function databerita_adminhumas(): string
-    {
-        return view('databerita_adminhumas');
-    }
 
 }

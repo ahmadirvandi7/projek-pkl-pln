@@ -187,66 +187,70 @@
                     <div class="card mt-4">
                         <div class="card-header pb-0 p-3">
                             <div class="row">
+                                <div class="col-8 d-flex align-items-center">
+                                    <h6 class="mb-0">Edit Data Berita</h6>
+                                </div>
                             </div>
                         </div>
                         <div class="card-body p-3">
-                            <p class="text-uppercase text-sm">Form Tambah Data Berita</p>
-                            <form action="<?= site_url('/databerita_adminhumas/store') ?>" method="post">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="kategori" class="form-control-label">Kategori</label>
-                                            <select class="form-control" id="kategori" name="kategori" required>
-                                                <option value="B2. Scoring Top Issue">B2. Scoring Top Issue</option>
-                                                <!-- Tambahkan opsi dropdown lain di sini jika diperlukan -->
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="tanggal" class="form-control-label">Tanggal</label>
-                                            <input class="form-control" id="tanggal" type="date" name="tanggal"
-                                                required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="media_pemberitaan" class="form-control-label">Media
-                                                Pemberitaan</label>
-                                            <select class="form-control" id="media_pemberitaan" name="media_pemberitaan"
-                                                required>
-                                                <option value="Media Online">Media Online</option>
-                                                <option value="Media Cetak">Media Cetak</option>
-                                                <option value="Media Elektronik">Media Elektronik</option>
-                                                <!-- Tambahkan opsi dropdown lain di sini jika diperlukan -->
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="judul_pemberitaan" class="form-control-label">Judul
-                                                Pemberitaan</label>
-                                            <input class="form-control" id="judul_pemberitaan" type="text"
-                                                name="judul_pemberitaan" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="link_pemberitaan" class="form-control-label">Link
-                                                Pemberitaan</label>
-                                            <input class="form-control" id="link_pemberitaan" type="text"
-                                                name="link_pemberitaan" required>
-                                        </div>
+                            <form action="/databerita_adminhumas/update/<?= $berita['id'] ?>" method="post">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="kategori" class="form-control-label">Kategori</label>
+                                        <select class="form-control" id="kategori" name="kategori" required>
+                                            <option value="B2. Scoring Top Issue" <?= $berita['kategori'] == 'B2. Scoring Top Issue' ? 'selected' : '' ?>>B2. Scoring Top Issue</option>
+                                            <!-- Tambahkan opsi lain sesuai kebutuhan -->
+                                        </select>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary btn-sm mb-0 w-150" type="submit"
-                                    style="background-color: #2596be;">Submit</button>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="tanggal" class="form-control-label">Tanggal</label>
+                                        <input class="form-control" id="tanggal" type="date" name="tanggal"
+                                            value="<?= $berita['tanggal'] ?>" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="media_pemberitaan" class="form-control-label">Media
+                                            Pemberitaan</label>
+                                        <select class="form-control" id="media_pemberitaan" name="media_pemberitaan"
+                                            required>
+                                            <option value="media online" <?= $berita['media_pemberitaan'] == 'media online' ? 'selected' : '' ?>>Media Online</option>
+                                            <option value="media cetak" <?= $berita['media_pemberitaan'] == 'media cetak' ? 'selected' : '' ?>>Media Cetak</option>
+                                            <option value="media elektronik" <?= $berita['media_pemberitaan'] == 'media elektronik' ? 'selected' : '' ?>>Media Elektronik</option>
+                                            <!-- Tambahkan opsi lain sesuai kebutuhan -->
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="judul_pemberitaan" class="form-control-label">Judul
+                                            Pemberitaan</label>
+                                        <input class="form-control" id="judul_pemberitaan" type="text"
+                                            name="judul_pemberitaan" value="<?= $berita['judul_pemberitaan'] ?>"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="link_pemberitaan" class="form-control-label">Link
+                                            Pemberitaan</label>
+                                        <input class="form-control" id="link_pemberitaan" type="text"
+                                            name="link_pemberitaan" value="<?= $berita['link_pemberitaan'] ?>" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="btn btn-primary btn-sm mb-0 w-150" type="submit"
+                                        style="background-color: #2596be;">Submit</button>
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
 
         <!--  -->
 

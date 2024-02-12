@@ -2,11 +2,11 @@
 <html>
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76"
-    href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
-  <link rel="icon" type="image/png" href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
-    <title>Data Tamu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76"
+        href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
+    <link rel="icon" type="image/png" href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
+    <title>Data Berita</title>
 </head>
 
 <body>
@@ -27,13 +27,13 @@
 
         }
 
-        a {
+        /* a {
             background: blue;
             color: #fff;
             padding: 8px 10px;
             text-decoration: none;
             border-radius: 2px;
-        }
+        } */
 
         .tengah {
             text-align: center;
@@ -41,19 +41,19 @@
     </style>
     <table>
         <tr>
-            <th>No</th>
-            <th>Nama tamu</th>
-            <th>Tanggal dan waktu</th>
-            <th>Asal Instansi</th>
-            <th>No Telepon</th>
-            <th>Tujuan</th>
+            <th class="text-sm">No.</th>
+            <th class="text-sm">Kategori</th>
+            <th class="text-sm">Tanggal</th>
+            <th class="text-sm">Media Pemberitaan</th>
+            <th class="text-sm">Judul Pemberitaan</th>
+            <th class="text-sm">Link Pemberitaan</th>
         </tr>
         <?php
         // koneksi database
         $koneksi = mysqli_connect("localhost", "root", "", "fiks-projek-pkl");
 
         // menampilkan data
-        $data = mysqli_query($koneksi, "select * from data_tamu");
+        $data = mysqli_query($koneksi, "select * from berita_pln");
         while ($d = mysqli_fetch_array($data)) {
             ?>
             <tr>
@@ -61,22 +61,25 @@
                     <?php echo $d['id'] ?>
                 </td>
                 <td>
-                    <?php echo $d['nama_tamu']; ?>
+                    <?php echo $d['kategori']; ?>
                 </td>
                 <td>
-                    <?php echo $d['tanggal_waktu']; ?>
+                    <?php echo $d['tanggal']; ?>
                 </td>
                 <td>
-                    <?php echo $d['asal_instansi']; ?>
+                    <?php echo $d['media_pemberitaan']; ?>
                 </td>
                 <td>
-                    <?php echo $d['no_telepon']; ?>
+                    <?php echo $d['judul_pemberitaan']; ?>
                 </td>
                 <td>
-                    <?php echo $d['tujuan']; ?>
+                    <a href="<?php echo $d['link_pemberitaan']; ?>" target="_blank">
+                        <?php echo $d['link_pemberitaan']; ?>
+                    </a>
                 </td>
+
             </tr>
-        <?php
+            <?php
         }
         ?>
     </table>

@@ -21,15 +21,38 @@ class JadwalRapatController extends BaseController
         return view('/jadwalrapat_superadmin', $data);
     }
 
-    public function jadwalrapat_admin()
+    public function index2()
     {
         $data['jadwal_rapat'] = $this->jadwalrapatModel->getJadwalRapat();
         return view('/jadwalrapat_admin', $data);
     }
 
-    public function cetak()
+    public function index3()
     {
         $data['jadwal_rapat'] = $this->jadwalrapatModel->getJadwalRapat();
+        return view('/jadwalrapat_adminhumas', $data);
+    }
+    public function display($id)
+    {
+        $data['jadwal_rapat'] = $this->jadwalrapatModel->findJadwalRapat($id);
+        return view('/displayjadwalrapat_superadmin', $data);
+    }
+
+    public function display2()
+    {
+        $data['jadwal_rapat'] = $this->jadwalrapatModel->getJadwalRapat1();
+        return view('/displayjadwalrapat_admin', $data);
+    }
+
+    public function display3()
+    {
+        $data['jadwal_rapat'] = $this->jadwalrapatModel->getJadwalRapat1();
+        return view('/displayjadwalrapat_adminhumas', $data);
+    }
+
+    public function cetak()
+    {
+        $data['jadwal_rapat'] = $this->jadwalrapatModel->getJadwalRapat1();
         return view('/cetakjadwalrapat_superadmin', $data);
     }
 
