@@ -5,7 +5,6 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-
 $routes->get('/', 'Home::index');
 // $routes->get('/login', 'Home::login');
 // $routes->get('/logout', '/login');
@@ -34,7 +33,7 @@ $routes->get('/jadwalrapat_superadmin/edit/(:num)', 'JadwalRapatController::edit
 $routes->post('/jadwalrapat_superadmin/update/(:num)', 'JadwalRapatController::update/$1',['filter' => 'role:superadmin']);
 $routes->get('/jadwalrapat_superadmin/delete/(:num)', 'JadwalRapatController::delete/$1',['filter' => 'role:superadmin']);
 $routes->get('/cetakjadwalrapat_superadmin', 'JadwalRapatController::cetak',['filter' => 'role:superadmin']);
-$routes->get('/jadwalrapat_superadmin/display/(:num)', 'JadwalRapatController::display/$1',['filter' => 'role:superadmin']);
+$routes->get('/jadwalrapat_superadmin/display', 'JadwalRapatController::display',['filter' => 'role:superadmin']);
 
 $routes->get('/datadriver_superadmin', 'DataDriverController::index',['filter' => 'role:superadmin']);
 $routes->get('/datadriver_superadmin/create', 'DataDriverController::create',['filter' => 'role:superadmin']);

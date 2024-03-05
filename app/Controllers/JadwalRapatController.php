@@ -32,9 +32,9 @@ class JadwalRapatController extends BaseController
         $data['jadwal_rapat'] = $this->jadwalrapatModel->getJadwalRapat();
         return view('/jadwalrapat_adminhumas', $data);
     }
-    public function display($id)
+    public function display()
     {
-        $data['jadwal_rapat'] = $this->jadwalrapatModel->findJadwalRapat($id);
+        $data['jadwal_rapat'] = $this->jadwalrapatModel->getJadwalRapat();
         return view('/displayjadwalrapat_superadmin', $data);
     }
 
@@ -79,6 +79,7 @@ class JadwalRapatController extends BaseController
             'ruangan' => $this->request->getPost('ruangan'),
             'bidang' => $this->request->getPost('bidang'),
             'jumlah_peserta' => $this->request->getPost('jumlah_peserta'),
+            'vendor' => $this->request->getPost('vendor'),
             'status_ruangan' => $this->request->getPost('status_ruangan'),
         ];
 
@@ -107,6 +108,7 @@ class JadwalRapatController extends BaseController
             'ruangan' => $this->request->getPost('ruangan'),
             'bidang' => $this->request->getPost('bidang'),
             'jumlah_peserta' => $this->request->getPost('jumlah_peserta'),
+            'vendor' => $this->request->getPost('vendor'),
             'status_ruangan' => $this->request->getPost('status_ruangan'),
         ];
 

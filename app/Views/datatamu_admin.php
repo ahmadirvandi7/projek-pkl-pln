@@ -117,7 +117,7 @@
             <span class="nav-link-text ms-1">Logout</span>
           </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link " href="Login">
             <div
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -125,7 +125,7 @@
             </div>
             <span class="nav-link-text ms-1">Login</span>
           </a>
-        </li>
+        </li> -->
       </ul>
     </div>
     

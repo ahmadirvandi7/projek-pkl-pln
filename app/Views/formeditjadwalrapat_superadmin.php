@@ -130,7 +130,7 @@
                         <span class="nav-link-text ms-1">Logout</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link " href="/login">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -138,7 +138,7 @@
                         </div>
                         <span class="nav-link-text ms-1">Login</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>
         <!-- <div class="sidenav-footer mx-3 ">
@@ -347,6 +347,13 @@
                                         <input class="form-control" id="jumlah_peserta" type="number"
                                             name="jumlah_peserta" value="<?= $jadwal_rapat['jumlah_peserta']; ?>"
                                             required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="vendor" class="form-control-label">Bidang</label>
+                                        <input class="form-control" id="vendor" type="text" name="vendor"
+                                            value="<?= $jadwal_rapat['vendor']; ?>" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
