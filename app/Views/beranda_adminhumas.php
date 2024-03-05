@@ -113,7 +113,7 @@
             <span class="nav-link-text ms-1">Data Tamu</span>
           </a>
         </li> -->
-        
+
         <!-- <li class="nav-item">
           <a class="nav-link " href="../pages/virtual-reality.html">
             <div
@@ -153,17 +153,9 @@
             <span class="nav-link-text ms-1">Logout</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link " href="/login">
-            <div
-              class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-collection text-info text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Login</span>
-          </a>
-        </li>
+
       </ul>
-    
+
   </aside>
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
@@ -210,7 +202,7 @@
                 aria-expanded="false">
                 <i class="fa fa-bell cursor-pointer"></i>
               </a>
-              
+
             </li>
           </ul>
         </div>
@@ -340,17 +332,52 @@
         <div class="col-lg-7 mb-lg-0 mb-4">
           <div class="card z-index-2 h-100">
             <div class="card-header pb-0 pt-3 bg-transparent">
-              <h6 class="text-capitalize">Grafik</h6>
-              <p class="text-sm mb-0">
-                <i class="fa fa-arrow-up text-success"></i>
-                <span class="font-weight-bold"></span> in 2024
-              </p>
+              <h6 class="text-capitalize">Grafik data berita</h6>
             </div>
             <div class="card-body p-3">
               <div class="chart">
-                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                <canvas id="barChartBerita" class="chart-canvas" height="190"></canvas>
               </div>
             </div>
+
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                const data_berita = <?= json_encode($berita_pln); ?>;
+
+                const jumlahBeritaPerBulan = Array(12).fill(0);
+                data_berita.forEach(function (berita) {
+                  const bulan = new Date(berita.tanggal).getMonth();
+                  jumlahBeritaPerBulan[bulan]++;
+                });
+
+                const namaBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+                const ctx = document.getElementById('barChartBerita').getContext('2d');
+                const barChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                    labels: namaBulan,
+                    datasets: [{
+                      label: 'Jumlah Berita',
+                      data: jumlahBeritaPerBulan,
+                      backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                      borderColor: 'rgba(54, 162, 235, 1)',
+                      borderWidth: 1
+                    }]
+                  },
+                  options: {
+                    scales: {
+                      y: {
+                        beginAtZero: true,
+                        ticks: {
+                          stepSize: 1,
+                          max: Math.max(...jumlahBeritaPerBulan) + 1
+                        }
+                      }
+                    }
+                  }
+                });
+              });
+            </script>
           </div>
         </div>
         <div class="col-lg-5">
@@ -403,7 +430,7 @@
           </div>
         </div>
 
-        
+
         <footer class="footer pt-3  ">
           <div class="container-fluid">
             <div class="row align-items-center justify-content-lg-between">

@@ -6,13 +6,13 @@ use CodeIgniter\Model;
 
 class JadwalRapatModel extends Model
 {
-    protected $table            = 'jadwal_rapat';
+    protected $table            = 'jadwalrapat';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['tanggal','mulai','selesai','agenda','ruangan','bidang','jumlah_peserta','status_ruangan'];
+    protected $allowedFields    = ['tanggal','mulai','selesai','agenda','ruangan','bidang','jumlah_peserta','vendor','status_ruangan'];
 
     // Dates
     protected $useTimestamps = true;

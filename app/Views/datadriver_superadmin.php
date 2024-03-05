@@ -92,33 +92,10 @@
           </a>
         </li>
 
-        <!-- <li class="nav-item">
-          <a class="nav-link " href="../pages/virtual-reality.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-app text-info text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Virtual Reality</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/rtl.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">RTL</span>
-          </a>
-        </li> -->
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link " href="../pages/profile.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Profile</span>
-          </a>
-        </li> -->
+
         <li class="nav-item">
           <a class="nav-link " href="/logout">
             <div
@@ -128,29 +105,9 @@
             <span class="nav-link-text ms-1">Logout</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link " href="/login">
-            <div
-              class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-collection text-info text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Login</span>
-          </a>
-        </li>
+
     </div>
-    <!-- <div class="sidenav-footer mx-3 ">
-      <div class="card card-plain shadow-none" id="sidenavCard">
-        <img class="w-50 mx-auto" src="material_dashboard/assets/img/illustrations/icon-documentation.svg" alt="sidebar_illustration">
-        <div class="card-body text-center p-3 w-100 pt-0">
-          <div class="docs-info">
-            <h6 class="mb-0">Need help?</h6>
-            <p class="text-xs font-weight-bold mb-0">Please check our docs</p>
-          </div>
-        </div>
-      </div>
-      <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank" class="btn btn-dark btn-sm w-100 mb-3">Documentation</a>
-      <a class="btn btn-primary btn-sm mb-0 w-100" href="https://www.creative-tim.com/product/argon-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
-    </div> -->
+
   </aside>
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
@@ -197,7 +154,7 @@
                 aria-expanded="false">
                 <i class="fa fa-bell cursor-pointer"></i>
               </a>
-              
+
             </li>
           </ul>
         </div>
@@ -220,46 +177,45 @@
               <table class="table table-sm" style="font-size: 14px;">
                 <thead>
                   <tr>
-                    <th><small>ID</small></th>
-                    <th><small>nama driver</small></th>
+                    <th><small>No</small></th>
+                    <th><small>Nama Driver</small></th>
                     <th><small>Aksi</small></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php foreach ($driver as $driver): ?>
+                  <?php $counter = 1; ?>
+                  <?php foreach ($driver as $driverItem): ?>
                     <tr>
-                      <td>
-                        <small>
-                          <?= $driver['id'] ?>
-                        </small>
-                      </td>
-                      <td>
-                        <small>
-                          <?= $driver['nama_driver'] ?>
-                        </small>
-                      </td>
+                      <td><small>
+                          <?= $counter ?>
+                        </small></td>
+                      <td><small>
+                          <?= $driverItem['nama_driver'] ?>
+                        </small></td>
                       <td>
                         <a class="btn btn-link btn-sm text-dark px-3 mb-0"
-                          href="/datadriver_superadmin/edit/<?= $driver['id']; ?>">
+                          href="/datadriver_superadmin/edit/<?= $driverItem['id']; ?>">
                           <i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit
                         </a>
                         <a class="btn btn-link btn-sm text-danger text-gradient px-3 mb-0" href="#"
-                          onclick="confirmDelete(<?= $driver['id']; ?>)">
+                          onclick="confirmDelete(<?= $driverItem['id']; ?>)">
                           <i class="far fa-trash-alt me-2"></i>Hapus
                         </a>
                       </td>
-                      <script>
-                        function confirmDelete(id) {
-                          if (confirm("Anda yakin ingin menghapus data ini?")) {
-                            window.location.href = "/datadriver_superadmin/delete/" + id;
-                          }
-                        }
-                      </script>
                     </tr>
+                    <?php $counter++; ?>
                   <?php endforeach; ?>
                 </tbody>
-
               </table>
+
+              <script>
+                function confirmDelete(id) {
+                  if (confirm("Anda yakin ingin menghapus data ini?")) {
+                    window.location.href = "/datadriver_superadmin/delete/" + id;
+                  }
+                }
+              </script>
+
             </div>
           </div>
         </div>
@@ -277,30 +233,25 @@
               <table class="table table-sm" style="font-size: 14px;">
                 <thead>
                   <tr>
-                    <th><small>ID</small></th>
+                    <th><small>Nomor</small></th>
                     <th><small>Nomor Polisi</small></th>
                     <th><small>Merk</small></th>
                     <th><small>Aksi</small></th>
                   </tr>
                 </thead>
                 <tbody>
+                  <?php $nomor = 1; ?>
                   <?php foreach ($kendaraan as $kendaraan): ?>
                     <tr>
-                      <td>
-                        <small>
-                          <?= $kendaraan['id'] ?>
-                        </small>
-                      </td>
-                      <td>
-                        <small>
+                      <td><small>
+                          <?= $nomor ?>
+                        </small></td>
+                      <td><small>
                           <?= $kendaraan['nopol_kendaraan'] ?>
-                        </small>
-                      </td>
-                      <td>
-                        <small>
+                        </small></td>
+                      <td><small>
                           <?= $kendaraan['merk'] ?>
-                        </small>
-                      </td>
+                        </small></td>
                       <td>
                         <a class="btn btn-link btn-sm text-dark px-3 mb-0"
                           href="/datakendaraan_superadmin/edit/<?= $kendaraan['id']; ?>">
@@ -311,19 +262,20 @@
                           <i class="far fa-trash-alt me-2"></i>Hapus
                         </a>
                       </td>
-
-                      <script>
-                        function confirmDeleteKendaraan(id) {
-                          if (confirm("Anda yakin ingin menghapus data ini?")) {
-                            window.location.href = "/datakendaraan_superadmin/delete/" + id;
-                          }
-                        }
-                      </script>
-
                     </tr>
+                    <?php $nomor++; ?>
                   <?php endforeach; ?>
                 </tbody>
               </table>
+
+              <script>
+                function confirmDeleteKendaraan(id) {
+                  if (confirm("Anda yakin ingin menghapus data ini?")) {
+                    window.location.href = "/datakendaraan_superadmin/delete/" + id;
+                  }
+                }
+              </script>
+
             </div>
           </div>
         </div>
@@ -333,7 +285,7 @@
               <div class="card-header pb-0 p-3">
                 <div class="row align-items-center">
                   <div class="col-8">
-                  <a class="btn btn-primary btn-sm" href="/daftarpemesanan_superadmin/create"
+                    <a class="btn btn-primary btn-sm" href="/daftarpemesanan_superadmin/create"
                       style="background-color: #2596be;">
                       Tambah daftar pemesanan
                     </a>
@@ -398,10 +350,10 @@
                   </tbody>
                 </table>
                 <h6>Cetak <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"
-                  onclick="window.location.href='/datadriver_superadmin/cetak'">
-                  <i class="fas fa-file-pdf text-lg me-1"></i> PDF
-                </button></h6>
-              <br>
+                    onclick="window.location.href='/datadriver_superadmin/cetak'">
+                    <i class="fas fa-file-pdf text-lg me-1"></i> PDF
+                  </button></h6>
+                <br>
               </div>
             </div>
           </div>

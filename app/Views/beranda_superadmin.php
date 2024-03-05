@@ -29,6 +29,7 @@
     }
   </style>
   <meta charset="utf-8" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76"
     href="<?php echo base_url('material_dashboard/assets/img/LogoPln.png'); ?>">
@@ -104,36 +105,11 @@
             <span class="nav-link-text ms-1">Data Tamu</span>
           </a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link " href="../pages/virtual-reality.html">
-            <div
-              class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-app text-info text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Virtual Reality</span>
-          </a>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link " href="../pages/rtl.html">
-            <div
-              class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">RTL</span>
-          </a>
-        </li> -->
+
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link " href="../pages/profile.html">
-            <div
-              class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Profile</span>
-          </a>
-        </li> -->
+
         <li class="nav-item">
           <a class="nav-link " href="/logout">
             <div
@@ -143,34 +119,10 @@
             <span class="nav-link-text ms-1">Logout</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link " href="/login">
-            <div
-              class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-collection text-info text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Login</span>
-          </a>
-        </li>
+
       </ul>
     </div>
-    <!-- <div class="sidenav-footer mx-3 ">
-      <div class="card card-plain shadow-none" id="sidenavCard">
-        <img class="w-50 mx-auto"
-          src="<?php echo base_url('material_dashboard/assets/img/illustrations/icon-documentation.svg'); ?>"
-          alt="sidebar_illustration">
-        <div class="card-body text-center p-3 w-100 pt-0">
-          <div class="docs-info">
-            <h6 class="mb-0">Need help?</h6>
-            <p class="text-xs font-weight-bold mb-0">Please check our docs</p>
-          </div>
-        </div>
-      </div>
-      <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank"
-        class="btn btn-dark btn-sm w-100 mb-3">Documentation</a>
-      <a class="btn btn-primary btn-sm mb-0 w-100"
-        href="https://www.creative-tim.com/product/argon-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
-    </div> -->
+
   </aside>
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
@@ -347,17 +299,53 @@
         <div class="col-lg-7 mb-lg-0 mb-4">
           <div class="card z-index-2 h-100">
             <div class="card-header pb-0 pt-3 bg-transparent">
-              <h6 class="text-capitalize">Grafik</h6>
-              <p class="text-sm mb-0">
-                <i class="fa fa-arrow-up text-success"></i>
-                <span class="font-weight-bold"></span> in 2024
-              </p>
+              <h6 class="text-capitalize">Grafik data pemesanan driver</h6>
+              
             </div>
             <div class="card-body p-3">
-              <div class="chart">
-                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
-              </div>
+            <div class="chart">
+                    <canvas id="barChart" class="chart-canvas" height="190"></canvas>
+                </div>
             </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const data_pemesanan = <?= json_encode($daftar_pemesanan); ?>;
+
+                    const jumlahPemesananPerBulan = Array(12).fill(0);
+                    data_pemesanan.forEach(function (pemesanan) {
+                        const bulan = new Date(pemesanan.tanggal_berangkat).getMonth();
+                        jumlahPemesananPerBulan[bulan]++;
+                    });
+
+                    const namaBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+                    const ctx = document.getElementById('barChart').getContext('2d');
+                    const barChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: namaBulan,
+                            datasets: [{
+                                label: 'Jumlah Pemesanan Driver',
+                                data: jumlahPemesananPerBulan,
+                                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        stepSize: 1,
+                                        max: Math.max(...jumlahPemesananPerBulan) + 1
+                                    }
+                                }
+                            }
+                        }
+                    });
+                });
+            </script>
           </div>
         </div>
         <div class="col-lg-5">

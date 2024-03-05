@@ -13,7 +13,7 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            font-family:  sans-serif;
+            font-family: sans-serif;
         }
 
         body {
@@ -60,7 +60,7 @@
         .meeting-details table th,
         .meeting-details table td {
             border: 0.1px solid white;
-            padding: 15px;
+            padding: 10px;
             text-align: left;
             /* border-radius: 8px; */
         }
@@ -93,54 +93,57 @@
 
 <body>
 
-
-    <div class="meeting-details">
-        <h2>Jadwal Rapat dan agenda</h2>
-        <div class="left-column">
-            <table>
-                <tr>
-                    <th id="current-time" colspan="2" style="font-size: 24px;"></th>
-                </tr>
-
-                <tr>
-                    <th id="current-date" colspan="2"></th>
-                </tr>
-            </table>
-        </div>
-        <div class="right-column">
-            <table>
-                <tr>
-                    <th>Ruangan</th>
-                    <td>
-                        <?= $jadwal_rapat['ruangan']; ?>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Agenda</th>
-                    <td>
-                        <?= $jadwal_rapat['agenda']; ?>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Waktu</th>
-                    <td>
-                        <?= date('H:i', strtotime($jadwal_rapat['mulai'])) . ' - ' . date('H:i', strtotime($jadwal_rapat['selesai'])); ?>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Bidang</th>
-                    <td>
-                        <?= $jadwal_rapat['bidang']; ?>
-                    </td>
-                </tr>
-
-            </table>
-            <div>
-                <button class="fullscreen-button" onclick="toggleFullScreen()">Full Screen</button>
-            </div>
-        </div>
+<div class="meeting-details">
+    <h2>Jadwal Rapat dan agenda</h2>
+    <div class="left-column">
+        <table>
+            <tr>
+                <th id="current-time" colspan="2" style="font-size: 24px;"></th>
+            </tr>
+            <tr>
+                <th id="current-date" colspan="2"></th>
+            </tr>
+        </table>
     </div>
+    <div class="right-column">
+        <table>
+            <thead>
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Mulai</th>
+                    <th>Selesai</th>
+                    <th>Agenda</th>
+                    <th>Ruangan</th>
+                    <th>Bidang</th>
+                    <th>Jumlah Peserta</th>
+                    <th>Vendor</th>
+                    <th>Status Ruangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($jadwal_rapat as $rapat): ?>
+                    <tr>
+                        <td><?= date('d-m-Y', strtotime($rapat['tanggal'])); ?></td>
+                        <td><?= date('H:i', strtotime($rapat['mulai'])); ?></td>
+                        <td><?= date('H:i', strtotime($rapat['selesai'])); ?></td>
+                        <td><?= $rapat['agenda']; ?></td>
+                        <td><?= $rapat['ruangan']; ?></td>
+                        <td><?= $rapat['bidang']; ?></td>
+                        <td><?= $rapat['jumlah_peserta']; ?></td>
+                        <td><?= $rapat['vendor']; ?></td>
+                        <td><?= $rapat['status_ruangan']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+        <div>
+        <button class="fullscreen-button" onclick="toggleFullScreen()">Full Screen</button>
+    </div>
+    </div>
+    
+</div>
 
+    
     <script>
         // Full layar
         function toggleFullScreen() {

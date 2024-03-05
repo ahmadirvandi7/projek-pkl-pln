@@ -28,6 +28,7 @@
       font-weight: bold;
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76"
@@ -49,8 +50,8 @@
     rel="stylesheet" />
 </head>
 
-<body class="g-sidenav-show"  style="background-color: #EEEEEE;">
-<div class="min-height-300 position-absolute w-100" style="background-color: #2596be;"></div>
+<body class="g-sidenav-show" style="background-color: #EEEEEE;">
+  <div class="min-height-300 position-absolute w-100" style="background-color: #2596be;"></div>
 
   <aside
     class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 "
@@ -104,36 +105,11 @@
             <span class="nav-link-text ms-1">Data Tamu</span>
           </a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link " href="../pages/virtual-reality.html">
-            <div
-              class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-app text-info text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Virtual Reality</span>
-          </a>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link " href="../pages/rtl.html">
-            <div
-              class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">RTL</span>
-          </a>
-        </li> -->
+
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link " href="../pages/profile.html">
-            <div
-              class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Profile</span>
-          </a>
-        </li> -->
+
         <li class="nav-item">
           <a class="nav-link " href="/logout">
             <div
@@ -143,18 +119,10 @@
             <span class="nav-link-text ms-1">Logout</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link " href="/login">
-            <div
-              class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-collection text-info text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Login</span>
-          </a>
-        </li>
+
       </ul>
     </div>
-  </div>
+    </div>
   </aside>
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
@@ -200,7 +168,7 @@
               <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 <i class="fa fa-bell cursor-pointer"></i>
-              </a>     
+              </a>
           </ul>
         </div>
       </div>
@@ -263,6 +231,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Jumlah data Rapat</p>
+
                     <br>
                     <h5 class="font-weight-bolder">
                       <?= count($jadwal_rapat); ?>
@@ -329,17 +298,55 @@
         <div class="col-lg-7 mb-lg-0 mb-4">
           <div class="card z-index-2 h-100">
             <div class="card-header pb-0 pt-3 bg-transparent">
-              <h6 class="text-capitalize">Grafik</h6>
-              <p class="text-sm mb-0">
-                <i class="fa fa-arrow-up text-success"></i>
-                <span class="font-weight-bold"></span> in 2024
-              </p>
+              <h6 class="text-capitalize">Grafik data tamu</h6>
             </div>
+            
+
             <div class="card-body p-3">
               <div class="chart">
-                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                <canvas id="barChartTamu" class="chart-canvas" height="190"></canvas>
               </div>
             </div>
+
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                const data_tamu = <?= json_encode($data_tamu); ?>;
+
+                const jumlahTamuPerBulan = Array(12).fill(0);
+                data_tamu.forEach(function (tamu) {
+                  const bulan = new Date(tamu.tanggal_waktu).getMonth();
+                  jumlahTamuPerBulan[bulan]++;
+                });
+
+                const namaBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+                const ctx = document.getElementById('barChartTamu').getContext('2d');
+                const barChartTamu = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                    labels: namaBulan,
+                    datasets: [{
+                      label: 'Jumlah Tamu',
+                      data: jumlahTamuPerBulan,
+                      backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                      borderColor: 'rgba(54, 162, 235, 1)',
+                      borderWidth: 1
+                    }]
+                  },
+                  options: {
+                    scales: {
+                      y: {
+                        beginAtZero: true,
+                        ticks: {
+                          stepSize: 10,
+                          max: 50
+                        }
+                      }
+                    }
+                  }
+                });
+              });
+            </script>
+
           </div>
         </div>
         <div class="col-lg-5">
@@ -392,7 +399,7 @@
           </div>
         </div>
 
-        
+
         <footer class="footer pt-3  ">
           <div class="container-fluid">
             <div class="row align-items-center justify-content-lg-between">
